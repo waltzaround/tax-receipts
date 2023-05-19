@@ -10,49 +10,6 @@ function App() {
 
   const tax_input = "0";
 
-  // Social security and welfare.
-  const tax_social_security = "33.5913312693498";
-  const health = { type: "primary", value: "500", color: "white" };
-
-  // Health.
-  const tax_health = "23.1424148606811";
-
-  // billion: Education.
-  const tax_education = "14.1640866873065";
-
-  // billion: Economic and industrial services.
-  const tax_economic_industrial_services = "7.19814241486068";
-
-  // billion: Core government services.
-  const tax_core_government_services = "4.48916408668731";
-
-  // Law and order.
-  const tax_law_and_order = "4.41176470588235";
-
-  // Transport and communications.
-  const tax_transport_and_communications = "3.94736842105263";
-
-  // Defence.
-  const tax_defence = "2.1671826625387";
-
-  // Environmental protection.
-  const tax_environment_protection = "2.1671826625387";
-
-  // Housing and community.
-  const tax_housing_community = "2.08978328173375";
-
-  // Heritage, culture and recreation.
-  const tax_heritage = "1.31578947368421";
-
-  // Primary services.
-  const tax_primary_services = "0.928792569659443";
-
-  // Other.
-  const tax_other = "0.309597523219814";
-
-  // Government Superannuation Fund pension expenses.
-  const tax_government_superannuation = "0.0773993808049536";
-
   function calculate() {
     console.log("Tax calculated!");
     const income = 130000;
