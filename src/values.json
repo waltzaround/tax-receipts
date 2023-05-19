@@ -1,0 +1,295 @@
+{
+    "budget": {
+        "totalSpend": 125641,
+        "category": [
+            {
+                "id": "social",
+                "name": "Social Security and welfare",
+                "value": 42860,
+                "children": [
+                    {
+                        "name": "Departmental expenses",
+                        "value": 2747,
+                        "link": ""
+                    },
+                    {
+                        "name": "Social rehabilitation and compensation",
+                        "value": 358,
+                        "link": ""
+                    },
+                    {
+                        "name": "Flexi-wage subsidy",
+                        "value": 59,
+                        "link": ""
+                    },
+                    {
+                        "name": "New Zealand Superannuation",
+                        "value": 17764,
+                        "link": ""
+                    },
+                    {
+                        "name": "Jobseeker Support and Emergency Benefit",
+                        "value": 3330,
+                        "link": ""
+                    },
+                    {
+                        "name": "Supported living payment",
+                        "value": 2047,
+                        "link": ""
+                    },
+                    {
+                        "name": "Sole parent support",
+                        "value": 1704,
+                        "link": ""
+                    },
+                    {
+                        "name": "Family Tax Credit",
+                        "value": 2017,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other working for families tax credits",
+                        "value": 519,
+                        "link": ""
+                    },
+                    {
+                        "name": "Accommodation Assistance",
+                        "value": 2386,
+                        "link": ""
+                    },
+                    {
+                        "name": "Income-Related Rents",
+                        "value": 1323,
+                        "link": ""
+                    },
+                    {
+                        "name": "Disability Assistance",
+                        "value": 412,
+                        "link": ""
+                    },
+                    {
+                        "name": "Covid leave support",
+                        "value": 471,
+                        "link": ""
+                    },
+                    {
+                        "name": "Winter energy",
+                        "value": 513,
+                        "link": ""
+                    },
+                    {
+                        "name": "Best start",
+                        "value": 308,
+                        "link": ""
+                    },
+                    {
+                        "name": "Orphan&ldquo;s Unsupported Child&ldquo;s Benefit",
+                        "value": 313,
+                        "link": ""
+                    },
+                    {
+                        "name": "Hardship Assistance",
+                        "value": 497,
+                        "link": ""
+                    },
+                    {
+                        "name": "Paid Parental Leave",
+                        "value": 603,
+                        "link": ""
+                    },
+                    {
+                        "name": "Childcare Assistance",
+                        "value": 132,
+                        "link": ""
+                    },
+                    {
+                        "name": "Veteran&ldquo;s Pensions",
+                        "value": 134,
+                        "link": ""
+                    },
+                    {
+                        "name": "Wage Subsidy Scheme",
+                        "value": 4689,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other benefits",
+                        "value": 25,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other non-departmental expenses",
+                        "value": 509,
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": "health",
+                "name": "Health Expenses",
+                "value": 27781,
+                "children": [
+                    {
+                        "name": "Departmental Outputs",
+                        "value": 368,
+                        "link": ""
+                    },
+                    {
+                        "name": "Purchasing of health services",
+                        "value": 17882,
+                        "link": ""
+                    },
+                    {
+                        "name": "National disability support services",
+                        "value": 1659,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other non-departmental outputs",
+                        "value": 770,
+                        "link": ""
+                    },
+                    {
+                        "name": "Health payments to ACC",
+                        "value": 896,
+                        "link": ""
+                    },
+                    {
+                        "name": "National health response to COVID-19 ",
+                        "value": 4965,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other expenses",
+                        "value": 82,
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": "education",
+                "name": "Education Expenses",
+                "value": 18023,
+                "children": [
+                    {
+                        "name": "Early childhood education",
+                        "value": 2247,
+                        "link": ""
+                    },
+                    {
+                        "name": "Primary Schools",
+                        "value": 4122,
+                        "link": ""
+                    },
+                    {
+                        "name": "Secondary Schools",
+                        "value": 3135,
+                        "link": ""
+                    },
+                    {
+                        "name": "School Transport",
+                        "value": 210,
+                        "link": ""
+                    },
+                    {
+                        "name": "Special needs support",
+                        "value": 658,
+                        "link": ""
+                    },
+                    {
+                        "name": "Professional development",
+                        "value": 129,
+                        "link": ""
+                    },
+                    {
+                        "name": "Schooling improvement",
+                        "value": 20,
+                        "link": ""
+                    },
+                    {
+                        "name": "School lunch programme",
+                        "value": 204,
+                        "link": ""
+                    },
+                    {
+                        "name": "Tertiary Tuition",
+                        "value": 3205,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other tertiary funding",
+                        "value": 755,
+                        "link": ""
+                    },
+                    {
+                        "name": "Student allowances",
+                        "value": 556,
+                        "link": ""
+                    },
+                    {
+                        "name": "Departmental expenses",
+                        "value": 1962,
+                        "link": ""
+                    },
+                    {
+                        "name": "COVID-19 apprentice support",
+                        "value": 255,
+                        "link": ""
+                    },
+                    {
+                        "name": "Training incentive allowance",
+                        "value": 9,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other education expenses",
+                        "value": 586,
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": "core_govt",
+                "name": "Core Government Services Expenses",
+                "value": 5720,
+                "children": [
+                    {
+                        "name": "Departmental expenses",
+                        "value": 2271,
+                        "link": ""
+                    },
+                    {
+                        "name": "Official development assistance",
+                        "value": 827,
+                        "link": ""
+                    },
+                    {
+                        "name": "Tax receivable write-down and impairments",
+                        "value": 3135,
+                        "link": ""
+                    },
+                    {
+                        "name": "Science expenses",
+                        "value": 210,
+                        "link": ""
+                    },
+                    {
+                        "name": "Indemnity and guarantee expenses",
+                        "value": 3,
+                        "link": ""
+                    },
+                    {
+                        "name": "Non-departmental expenses",
+                        "value": 928,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other Expenses",
+                        "value": 709,
+                        "link": ""
+                    }
+                ]
+            }
+        ]
+    }
+}

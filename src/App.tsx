@@ -8,9 +8,11 @@ function App() {
 
   // Methodology:  Value divided by 107.901 billion (2021 actual core crown expenses) multiplied by 100 as a percentage of...
 
-  var tax_input = "0";
+  const tax_input = "0";
+
   // Social security and welfare.
   const tax_social_security = "33.5913312693498";
+  const health = { type: "primary", value: "500", color: "white" };
 
   // Health.
   const tax_health = "23.1424148606811";
@@ -51,6 +53,49 @@ function App() {
   // Government Superannuation Fund pension expenses.
   const tax_government_superannuation = "0.0773993808049536";
 
+  function calculate() {
+    console.log("Tax calculated!");
+    const income = 130000;
+    const amounts = calculateAmountPerTaxBand(income, taxBands);
+
+    console.log(amounts);
+  }
+
+  const taxBands = [
+    { id: "band1", end: 14000, rate: 10.5 },
+    { id: "band2", end: 48000, rate: 17.5 },
+    { id: "band3", end: 70000, rate: 30 },
+    { id: "band4", end: 180000, rate: 33 },
+    { id: "band5", end: Infinity, rate: 39 },
+  ];
+
+  type TaxBand = { id: string; end: number; rate: number };
+  type BandAmount = { id: string; amount: number };
+
+  function calculateAmountPerTaxBand(income: number, taxBands: TaxBand[]) {
+    const amounts: BandAmount[] = [];
+
+    for (let i = 0; i < taxBands.length; i++) {
+      const currentTaxBand = taxBands[i];
+      const prevTaxBand = taxBands[i - 1] as TaxBand | undefined;
+      let taxAmount = 0;
+
+      if (income < currentTaxBand.end) {
+        taxAmount =
+          (income - (prevTaxBand?.end ?? 0)) * (currentTaxBand.rate / 100);
+        amounts.push({ id: currentTaxBand.id, amount: taxAmount });
+        break;
+      } else {
+        taxAmount =
+          (currentTaxBand.end - (prevTaxBand?.end ?? 0)) *
+          (currentTaxBand.rate / 100);
+        amounts.push({ id: currentTaxBand.id, amount: taxAmount });
+      }
+    }
+
+    return amounts;
+  }
+
   return (
     <>
       <header>
@@ -73,6 +118,7 @@ function App() {
             <i>$</i>
             <input
               type="number"
+              id="input-income"
               className="calculator-input"
               placeholder="0.00"
               step="0.01"
@@ -84,6 +130,7 @@ function App() {
             <input
               type="number"
               className="calculator-input"
+              id="input-spending"
               placeholder="0.00"
               step="0.01"
             />
@@ -93,13 +140,14 @@ function App() {
             <i>$</i>
             <input
               type="number"
+              id="input-other"
               className="calculator-input"
               placeholder="0.00"
               step="0.01"
             />
           </label>
         </div>
-        <button>Calculate</button>
+        <button onClick={calculate()}>Calculate</button>
       </section>
       <section className="tax-result">
         <h2>Based on a total tax bill of $12,121, You contributed...</h2>
@@ -433,6 +481,151 @@ function App() {
             <h3 className="result-header-secondary">Other departments</h3>
             <p className="result-value-secondary">$1,231.00</p>
           </div>
+          <div className="result-secondary-item"></div>
+        </div>
+      </section>
+
+      <section className="result">
+        <div className="result-primary">
+          <h3 className="result-header">
+            Transport and communication expenses
+          </h3>
+          <p className="result-value">$1,231.00</p>
+        </div>
+        <div className="result-secondary">
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">Departmental outputs</h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">
+              Waka Kotahi NZ Transport Agency
+            </h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">Rail funding</h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">
+              Funding to support the aviation and transport Industries
+            </h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">
+              Funding to support Waka Kotahi due to impact of COVID-19
+            </h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">
+              Shovel ready project funding to Crown Infrastructure Partners
+            </h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">
+              Other non-departmental expenses
+            </h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">Other expenses</h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+
+          <div className="result-secondary-item"></div>
+        </div>
+      </section>
+
+      <section className="result">
+        <div className="result-primary">
+          <h3 className="result-header">
+            Economic and industrial services expenses
+          </h3>
+          <p className="result-value">$1,231.00</p>
+        </div>
+        <div className="result-secondary">
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">Departmental outputs</h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">Employment initiatives</h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">
+              Non-departmental outputs
+            </h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">
+              KiwiSaver (includes HomeStart grant)
+            </h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">
+              Initial fair value write-down on the Small Business Cashflow
+              Scheme loans
+            </h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">
+              COVID-19 Resurgence Support Payments
+            </h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">
+              Shovel ready funding to support energy projects
+            </h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">
+              Shovel ready project funding to support regional projects
+            </h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">
+              Worker redeployment package
+            </h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">Other expenses</h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+
+          <div className="result-secondary-item"></div>
+          <div className="result-secondary-item"></div>
+        </div>
+      </section>
+
+      <section className="result">
+        <div className="result-primary">
+          <h3 className="result-header">Defence expenses</h3>
+          <p className="result-value">$1,231.00</p>
+        </div>
+        <div className="result-secondary">
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">
+              New Zealand Defence Force expenses
+            </h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+          <div className="result-secondary-item">
+            <h3 className="result-header-secondary">Other expenses</h3>
+            <p className="result-value-secondary">$1,231.00</p>
+          </div>
+
           <div className="result-secondary-item"></div>
         </div>
       </section>
