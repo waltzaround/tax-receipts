@@ -57,7 +57,7 @@ const Form = ({onSubmit, isSent, totals}: FormProps) => {
               <input
                 className="calculator-input"
                 id="input-income"
-                inputMode="numeric"
+                inputMode="decimal"
                 onChange={handleIncomeChange}
                 pattern="\d{1,}[\,\.]{1}\d{1,2}"
                 placeholder="0.00"
@@ -71,7 +71,7 @@ const Form = ({onSubmit, isSent, totals}: FormProps) => {
               <input
                 className="calculator-input"
                 id="input-spending"
-                inputMode="numeric"
+                inputMode="decimal"
                 onChange={handleGSTChange}
                 pattern="\d{1,}[\,\.]{1}\d{1,2}"
                 placeholder="0.00"
@@ -85,7 +85,7 @@ const Form = ({onSubmit, isSent, totals}: FormProps) => {
               <input
                 className="calculator-input"
                 id="input-other"
-                inputMode="numeric"
+                inputMode="decimal"
                 onChange={handleOtherTaxChange}
                 pattern="\d{1,}[\,\.]{1}\d{1,2}"
                 placeholder="0.00"
