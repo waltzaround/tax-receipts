@@ -289,6 +289,309 @@
                         "link": ""
                     }
                 ]
+            },
+            {
+                "id": "law_order",
+                "name": "Law and Order Expenses",
+                "value": 4907,
+                "children": [
+                    {
+                        "name": "Police",
+                        "value": 2206,
+                        "link": ""
+                    },
+                    {
+                        "name": "Department of Corrections",
+                        "value": 1645,
+                        "link": ""
+                    },
+                    {
+                        "name": "Ministry of Justice",
+                        "value": 704,
+                        "link": ""
+                    },
+                    {
+                        "name": "NZ Customs Service",
+                        "value": 200,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other Departments",
+                        "value": 152,
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": "transport_comms",
+                "name": "Transport and communication expenses",
+                "value": 4657,
+                "children": [
+                    {
+                        "name": "Departmental outputs",
+                        "value": 82,
+                        "link": ""
+                    },
+                    {
+                        "name": "Waka Kotahi NZ Transport Agency",
+                        "value": 2782,
+                        "link": ""
+                    },
+                    {
+                        "name": "Rail Funding",
+                        "value": 310,
+                        "link": ""
+                    },
+                    {
+                        "name": "Funding to support the aviation and transport Industries",
+                        "value": 554,
+                        "link": ""
+                    },
+                    {
+                        "name": "Funding to support Waka Kotahi due to impact of COVID-19",
+                        "value": 128,
+                        "link": ""
+                    },
+                    {
+                        "name": "Transport temporary relief package",
+                        "value": 411,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other non-departmental expenses",
+                        "value": 559,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other expenses",
+                        "value": 306,
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": "econ_and_industry",
+                "name": "Economic and industrial services expenses",
+                "value": 8078,
+                "children": [
+                    {
+                        "name": "Departmental outputs",
+                        "value": 633,
+                        "link": ""
+                    },
+                    {
+                        "name": "Employment Initiatives",
+                        "value": 4,
+                        "link": ""
+                    },
+                    {
+                        "name": "Non-departmental outputs",
+                        "value": 1697,
+                        "link": ""
+                    },
+                    {
+                        "name": "KiwiSaver (includes HomeStart grant)",
+                        "value": 964,
+                        "link": ""
+                    },
+                    {
+                        "name": "Initial fair value write-down on the Small Business Cashflow Scheme loans",
+                        "value": 230,
+                        "link": ""
+                    },
+                    {
+                        "name": "COVID-19 Resurgence Support Payments",
+                        "value": 4019,
+                        "link": ""
+                    },
+                    {
+                        "name": "Shovel ready funding to support energy projects",
+                        "value": 559,
+                        "link": ""
+                    },
+                    {
+                        "name": "Shovel ready project funding to support regional projects",
+                        "value": 174,
+                        "link": ""
+                    },
+                    {
+                        "name": "Worker redeployment package",
+                        "value": 6,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other expenses",
+                        "value": 344,
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": "defence",
+                "name": "Defence expenses",
+                "value": 2832,
+                "children": [
+                    {
+                        "name": "New Zealand Defence Force expenses",
+                        "value": 2672,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other expenses",
+                        "value": 160,
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": "heritage_culture_recreation",
+                "name": "Heritage, culture and recreation expenses",
+                "value": 1468,
+                "children": [
+                    {
+                        "name": "Departmental outputs",
+                        "value": 374,
+                        "link": ""
+                    },
+                    {
+                        "name": "Non-departmental outputs",
+                        "value": 809,
+                        "link": ""
+                    },
+                    {
+                        "name": "Screen Production Grants",
+                        "value": 69,
+                        "link": ""
+                    },
+                    {
+                        "name": "COVID-19 cultural sector response",
+                        "value": 73,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other expenses",
+                        "value": 143,
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": "primary_services",
+                "name": "Primary Services expenses",
+                "value": 949,
+                "children": [
+                    {
+                        "name": "Departmental Expenses",
+                        "value": 724,
+                        "link": ""
+                    },
+                    {
+                        "name": "Non-departmental outputs",
+                        "value": 106,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other expenses",
+                        "value": 119,
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": "housing_community",
+                "name": "Housing and community development expenses",
+                "value": 2033,
+                "children": [
+                    {
+                        "name": "Departmental outputs",
+                        "value": 255,
+                        "link": ""
+                    },
+                    {
+                        "name": "Housing subsidies",
+                        "value": 4,
+                        "link": ""
+                    },
+                    {
+                        "name": "Community Services",
+                        "value": 438,
+                        "link": ""
+                    },
+                    {
+                        "name": "Housing Acceleration Fund",
+                        "value": 22,
+                        "link": ""
+                    },
+                    {
+                        "name": "Water Infrastructure",
+                        "value": 143,
+                        "link": ""
+                    },
+                    {
+                        "name": "Shovel ready project funding to support housing projects",
+                        "value": 143,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other non-departmental expenses, KiwiBuild, transitional housing costs",
+                        "value": 987,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other expenses",
+                        "value": 53,
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": "environment",
+                "name": "Environmental protection expenses",
+                "value": 2549,
+                "children": [
+                    {
+                        "name": "NZ Emissions Trading Scheme",
+                        "value": 1498,
+                        "link": ""
+                    },
+                    {
+                        "name": "Departmental outputs",
+                        "value": 690,
+                        "link": ""
+                    },
+                    {
+                        "name": "Non-departmental outputs",
+                        "value": 170,
+                        "link": ""
+                    },
+                    {
+                        "name": "Clean car discount",
+                        "value": 128,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other expenses",
+                        "value": 63,
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": "finance",
+                "name": "Finance costs",
+                "value": 2884,
+                "children": [
+                    {
+                        "name": "Interest on financial liabilities",
+                        "value": 2796,
+                        "link": ""
+                    },
+                    {
+                        "name": "Interest unwind on provisions",
+                        "value": 88,
+                        "link": ""
+                    }
+                ]
             }
         ]
     }

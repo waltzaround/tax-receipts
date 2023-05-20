@@ -9,15 +9,6 @@ function App() {
   // Methodology:  Value divided by 107.901 billion (2021 actual core crown expenses) multiplied by 100 as a percentage of...
 
   const tax_input = "0";
-
-  function calculate() {
-    console.log("Tax calculated!");
-    const income = 130000;
-    const amounts = calculateAmountPerTaxBand(income, taxBands);
-
-    console.log(amounts);
-  }
-
   const taxBands = [
     { id: "band1", end: 14000, rate: 10.5 },
     { id: "band2", end: 48000, rate: 17.5 },
@@ -25,6 +16,14 @@ function App() {
     { id: "band4", end: 180000, rate: 33 },
     { id: "band5", end: Infinity, rate: 39 },
   ];
+
+  function calculate() {
+    console.log("Tax calculated!");
+    const income = 130000;
+    const amount = calculateAmountPerTaxBand(income, taxBands);
+
+    console.log(amount);
+  }
 
   type TaxBand = { id: string; end: number; rate: number };
   type BandAmount = { id: string; amount: number };
@@ -104,10 +103,13 @@ function App() {
             />
           </label>
         </div>
-        <button onClick={calculate()}>Calculate</button>
+        <button onClick={calculate}>Calculate</button>
       </section>
       <section className="tax-result">
-        <h2>Based on a total tax bill of $12,121, You contributed...</h2>
+        <h2>
+          Based on a total tax bill of <strong>$12,121</strong>, this is where
+          your money went
+        </h2>
       </section>
       <section className="result">
         <div className="result-primary">

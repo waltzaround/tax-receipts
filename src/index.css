@@ -24,6 +24,10 @@ html {
 
 }
 
+strong {
+  font-weight: 900;
+}
+
 a {
   font-weight: 500;
   color: blue;
@@ -95,6 +99,7 @@ header {
   background: #FFFFFF;
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
   margin: 2.5rem 0;
+  border-radius: 8px;
 }
 
 .calculator-flex {
@@ -108,6 +113,7 @@ header {
   flex-direction: column;
   flex: 1;
   position: relative;
+  color: black;
 }
 
 .calculator-flex label i {
@@ -129,9 +135,9 @@ header {
   color: black;
   font-family: inherit;
   border-radius: 6px;
-  border: 1px solid black;
-  \
- line-height: 1;
+  border: 1px solid #9e9e9e;
+
+  line-height: 1;
 
 }
 
@@ -150,6 +156,7 @@ header {
 
 .result-header {
   font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .result-value {
@@ -173,8 +180,11 @@ header {
 .result-header-secondary {
   font-size: 1rem;
   margin-bottom: 0.25rem;
+  font-weight: 400;
 }
 
 .result-value-secondary {
   font-size: 1.5rem;
+
+  font-weight: 600;
 }
