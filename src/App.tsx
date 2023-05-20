@@ -176,8 +176,8 @@ function App() {
         {isSent && (
           <section className="contribution">
             <p>Income Tax Contribution: ${calculateTaxAlone().toFixed(2)}</p>·
-            <p>GST Contribution: ${gstInput * 0.15}</p>·
-            <p>Other Tax Contributions: ${otherTaxInput}</p>
+            <p>GST Contribution: ${(gstInput * 0.15).toFixed(2)}</p>·
+            <p>Other Tax Contributions: ${otherTaxInput.toFixed(2)}</p>
           </section>
         )}
       </main>
