@@ -15,20 +15,20 @@ function App() {
 
   const [isSent, setIsSent] = useState(false);
 
-  const handleIncomeChange = (event) => {
+  const handleIncomeChange = (event: any) => {
     setIncome(event.target.value);
     console.log("Income is:", event.target.value);
   };
-  const handleGSTChange = (event) => {
+  const handleGSTChange = (event: any) => {
     setGstInput(event.target.value);
     console.log("Spend is:", event.target.value);
   };
-  const handleOtherTaxChange = (event) => {
+  const handleOtherTaxChange = (event: any) => {
     setOtherTaxInput(event.target.value);
     console.log("Other tax contribution is:", event.target.value);
   };
 
-  const handleTotalTaxChange = (event) => {
+  const handleTotalTaxChange = (event: any) => {
     setTotalTaxInput(event.target.value);
     console.log("Total tax contribution is:", event.target.value);
   };
