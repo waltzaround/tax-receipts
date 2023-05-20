@@ -8,10 +8,10 @@ function App() {
   //Source: https://www.treasury.govt.nz/sites/default/files/2022-05/befu22.pdf
 
   //get inputs...
-  const [income, setIncome] = useState("");
-  const [gstInput, setGstInput] = useState("");
-  const [otherTaxInput, setOtherTaxInput] = useState("");
-  let [total_tax, setTotalTaxInput] = useState("number");
+  const [income, setIncome] = useState(0);
+  const [gstInput, setGstInput] = useState(0);
+  const [otherTaxInput, setOtherTaxInput] = useState(0);
+  let [total_tax, setTotalTaxInput] = useState(0);
 
   const [isSent, setIsSent] = useState(false);
 
@@ -43,7 +43,8 @@ function App() {
     { id: "band5", end: Infinity, rate: 39 },
   ];
   function calculate() {
-    const sum = calculateAmountPerTaxBand(parseFloat(income), taxBands);
+    // Income tax calculation
+    const sum = calculateAmountPerTaxBand(income, taxBands);
     function sumAmount() {
       let total = 0;
       for (let i = 0; i < sum.length; i++) {
@@ -51,19 +52,18 @@ function App() {
       }
       return total;
     }
-
     let sumsum = sumAmount();
     taxAfterSubmission = sumsum;
 
+    console.log("Income contribution is:", sumsum);
+    console.log("GST tax contribution is:", gstInput * 0.15);
+    console.log("All other tax contribution is:", Number(otherTaxInput));
+    console.log("Tax calculated! Total contribution is:", total_tax);
+
     total_tax =
-      sumsum + parseFloat(gstInput) * 0.15 + parseFloat(otherTaxInput);
+      Number(sumsum) + Number(otherTaxInput) + Number(gstInput * 0.15);
 
     setTotalTaxInput(total_tax);
-
-    console.log("Income contribution is:", sumsum);
-    console.log("GST tax contribution is:", parseFloat(gstInput) * 0.15);
-    console.log("All other tax contribution is:", parseFloat(otherTaxInput));
-    console.log("Tax calculated! Total contribution is:", total_tax);
     return total_tax;
   }
 
@@ -170,8 +170,8 @@ function App() {
           <section className="tax-result">
             <h2>
               Based on a total tax bill of{" "}
-              <strong>${total_tax.toFixed(2)}</strong>, this is where your money
-              went
+              <strong>${(total_tax * 1).toFixed(2)}</strong>, this is where your
+              money went
             </h2>
           </section>
           <section className="summary" id="summary">
