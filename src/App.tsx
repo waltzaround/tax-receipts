@@ -188,7 +188,7 @@ function App() {
             <h2>
               Based on a total tax bill of{" "}
               <strong>${(total_tax * 1).toFixed(2)}</strong>, this is where your
-              money went
+              money was spent in 2022
             </h2>
           </section>
           <section className="summary" id="summary">
@@ -203,7 +203,7 @@ function App() {
                 </p>
                 <aside>
                   {((id.value / Budget.budget.totalSpend) * 100).toFixed(2)}% of
-                  total budget
+                  total spend
                 </aside>
               </div>
             ))}{" "}
@@ -223,7 +223,7 @@ function App() {
                 </p>{" "}
                 <aside>
                   {((id.value / Budget.budget.totalSpend) * 100).toFixed(2)}% of
-                  total budget
+                  total spend
                 </aside>
               </div>
               <div className="result-secondary">
@@ -239,13 +239,13 @@ function App() {
                     </p>
                     <aside>
                       {((name.value / id.value) * 100).toFixed(2)}% of
-                      department budget
+                      department spend
                     </aside>
                     <aside>
                       {((name.value / Budget.budget.totalSpend) * 100).toFixed(
                         2
                       )}
-                      % of total budget
+                      % of total spend
                     </aside>
                   </div>
                 ))}
