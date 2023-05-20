@@ -214,8 +214,26 @@ function App() {
         {Content.madeBy}
         <a href={Content.madeByAuthorHref} target="_blank" rel="noreferrer noopener">{Content.madeByAuthor}</a>
         <br />
-        <a href={Content.madeByRepoHref} target="_blank" rel="noreferrer noopener">
-          {Content.madeByRepoText}
+        <a href="https://github.com/waltzaround/tax-receipts" target="_blank">
+          Source code
+        </a>
+        &nbsp;·&nbsp;
+        <a
+          href="https://gist.github.com/waltzaround/5c469a4fe012a3b884af4826410cd5fa"
+          target="_blank"
+        >
+          Methodology
+        </a>
+        &nbsp;·&nbsp;
+        <a
+          href="https://gist.github.com/waltzaround/39a6c803e68890c392855fe3e6d450d1"
+          target="_blank"
+        >
+          How to calculate total tax
+        </a>
+        &nbsp;·&nbsp;
+        <a href="https://discord.gg/qNEBWZgBwY" target="_blank">
+          Discord
         </a>
       </footer>
     </>
