@@ -32,7 +32,7 @@ function App() {
     setTotalTaxInput(event.target.value);
     console.log("Total tax contribution is:", event.target.value);
   };
-
+  let taxAfterSubmission = 0;
   // income tax section
 
   const taxBands = [
@@ -52,7 +52,8 @@ function App() {
       return total;
     }
 
-    const sumsum = sumAmount();
+    let sumsum = sumAmount();
+    taxAfterSubmission = sumsum;
 
     total_tax =
       sumsum + parseFloat(gstInput) * 0.15 + parseFloat(otherTaxInput);
@@ -117,7 +118,7 @@ function App() {
         >
           <div className="calculator-flex">
             <label>
-              Annual Income
+              Your Annual Income
               <i>$</i>
               <input
                 type="number"
@@ -130,7 +131,7 @@ function App() {
               />
             </label>
             <label>
-              Annual Spending (Optional)
+              Your Annual Spending (Optional)
               <i>$</i>
               <input
                 type="number"
@@ -143,7 +144,7 @@ function App() {
               />
             </label>
             <label>
-              Any other tax contributions (Optional)
+              Any Other Tax Payments (Optional)
               <i>$</i>
               <input
                 type="number"
@@ -159,8 +160,13 @@ function App() {
           <button onClick={calculate}>Calculate</button>
         </form>
       </section>
+
       {isSent && (
         <div>
+          {/* <section>
+            <p>GST Contribution: ${parseFloat(gstInput) * 0.15}</p>
+            <p>Income Tax Contribution: ${parseFloat(taxAfterSubmission)}</p>
+          </section> */}
           <section className="tax-result">
             <h2>
               Based on a total tax bill of{" "}
