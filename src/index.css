@@ -6,6 +6,10 @@ html {
 
 }
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
 
   max-width: 1280px;
@@ -128,7 +132,7 @@ header {
 .calculator-flex label i {
   position: absolute;
   pointer-events: none;
-  top: 2.5rem;
+  top: calc(50%);
   left: 0.75rem;
   font-size: 1.5rem;
   line-height: 1;
@@ -186,6 +190,7 @@ header {
   padding-top: 1.5rem;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 1.5rem;
 }
 
@@ -262,6 +267,14 @@ footer {
 
 @media (max-width: 800px) {
 
+  :root {
+    padding: 0;
+  }
+
+  body {
+    margin: 1rem;
+  }
+
   .result-secondary {
     grid-template-columns: 1fr;
   }
@@ -272,5 +285,19 @@ footer {
 
   .last-2 {
     display: none;
+  }
+
+  .calculator-input, .calculator-flex label {
+    width: -webkit-fill-available;
+    position: relative;
+
+  }
+
+  .calculator-input {
+    padding: 1rem;
+  }
+
+  .calculator-flex label i {
+    display: none
   }
 }
