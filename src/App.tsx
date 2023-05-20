@@ -1,266 +1,221 @@
-import { useState } from "react";
+import { useState, useCallback, useMemo, useEffect } from "react";
+import { Content, Incomes2022 } from "./data";
+import { calculateTotals, formatCurrency } from "./utils";
+import type { CalculateTotalsReturn, InputChangeEvent } from "./types";
+import type { FormEvent } from "react";
 
 import "./App.css";
-import Budget from "./values.json";
 
 function App() {
-  //forgive me for the spaghetti I am about to commit
-  //Source: https://www.treasury.govt.nz/sites/default/files/2022-05/befu22.pdf
-
-  //get inputs...
-  const [income, setIncome] = useState(0);
-  const [gstInput, setGstInput] = useState(0);
-  const [otherTaxInput, setOtherTaxInput] = useState(0);
-  let [total_tax, setTotalTaxInput] = useState(0);
-
+  const [incomeInput, setIncomeInput] = useState<string | null>(null);
+  const [gstInput, setGstInput] = useState<string | null>(null);
+  const [otherTaxInput, setOtherTaxInput] = useState<string | null>(null);
+  const [totals, setTotals] = useState<CalculateTotalsReturn>({
+    income: "$0.00",
+    taxFromIncome: "$0.00",
+    taxFromGST: "$0.00",
+    taxFromOther: "$0.00",
+    totalTax: "$0.00",
+    totalsPerCategory: []
+  });
   const [isSent, setIsSent] = useState(false);
 
-  const handleIncomeChange = (event: any) => {
-    setIncome(event.target.value);
-    console.log("Income is:", event.target.value);
-  };
-  const handleGSTChange = (event: any) => {
-    setGstInput(event.target.value);
-    console.log("Spend is:", event.target.value);
-  };
-  const handleOtherTaxChange = (event: any) => {
-    setOtherTaxInput(event.target.value);
-    console.log("Other tax contribution is:", event.target.value);
-  };
+  const handleIncomeChange = useCallback((event: InputChangeEvent) => {
+    const value = event.currentTarget?.value?.replace(/[^0-9\.\,]/g, "");
+    setIncomeInput(value);
+  }, []);
 
-  const handleTotalTaxChange = (event: any) => {
-    setTotalTaxInput(event.target.value);
-    console.log("Total tax contribution is:", event.target.value);
-  };
-  let taxAfterSubmission = 0;
-  // income tax section
+  const handleGSTChange = useCallback((event: InputChangeEvent) => {
+    const value = event.currentTarget?.value?.replace(/[^0-9\.\,]/g, "");
+    setGstInput(value);
+  }, []);
 
-  const taxBands = [
-    { id: "band1", end: 14000, rate: 10.5 },
-    { id: "band2", end: 48000, rate: 17.5 },
-    { id: "band3", end: 70000, rate: 30 },
-    { id: "band4", end: 180000, rate: 33 },
-    { id: "band5", end: Infinity, rate: 39 },
-  ];
-  function calculate() {
-    // Income tax calculation
-    const sum = calculateAmountPerTaxBand(income, taxBands);
-    function sumAmount() {
-      let total = 0;
-      for (let i = 0; i < sum.length; i++) {
-        total += sum[i].amount;
-      }
-      return total;
+  const handleOtherTaxChange = useCallback((event: InputChangeEvent) => {
+    const value = event.currentTarget?.value?.replace(/[^0-9\.\,]/g, "");
+    setOtherTaxInput(value);
+  }, []);
+
+  const handleOnSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const income = incomeInput ? Number(incomeInput?.replace(/,/g, "")) : 0;
+    const gst = gstInput ? Number(gstInput?.replace(/,/g, "")) : 0;
+    const otherTax = otherTaxInput ? Number(otherTaxInput?.replace(/,/g, "")) : 0;
+    if (income > 0) {
+      const newTotals = calculateTotals({
+        income,
+        gst,
+        otherTax
+      });
+      setTotals(newTotals);
+      setIsSent(true);
     }
-    let sumsum = sumAmount();
-    taxAfterSubmission = sumsum;
+  }, [incomeInput, gstInput, otherTaxInput]);
 
-    console.log("Income contribution is:", sumsum);
-    console.log("GST tax contribution is:", gstInput * 0.15);
-    console.log("All other tax contribution is:", Number(otherTaxInput));
-    console.log("Tax calculated! Total contribution is:", total_tax);
+  const lastYear = useMemo(() => new Date().getFullYear() - 1, []);
 
-    total_tax =
-      Number(sumsum) + Number(otherTaxInput) + Number(gstInput * 0.15);
-
-    setTotalTaxInput(total_tax);
-    return total_tax;
-  }
-  function calculateTaxAlone() {
-    // Income tax calculation
-    const sum = calculateAmountPerTaxBand(income, taxBands);
-    function sumAmount() {
-      let total = 0;
-      for (let i = 0; i < sum.length; i++) {
-        total += sum[i].amount;
-      }
-      return total;
-    }
-    let sumsum = sumAmount();
-
-    return sumsum;
-  }
-
-  type TaxBand = { id: string; end: number; rate: number };
-  type BandAmount = { id: string; amount: number };
-
-  function calculateAmountPerTaxBand(income: number, taxBands: TaxBand[]) {
-    const amounts: BandAmount[] = [];
-
-    for (let i = 0; i < taxBands.length; i++) {
-      const currentTaxBand = taxBands[i];
-      const prevTaxBand = taxBands[i - 1] as TaxBand | undefined;
-      let taxAmount = 0;
-
-      if (income < currentTaxBand.end) {
-        taxAmount =
-          (income - (prevTaxBand?.end ?? 0)) * (currentTaxBand.rate / 100);
-        amounts.push({ id: currentTaxBand.id, amount: taxAmount });
-        break;
-      } else {
-        taxAmount =
-          (currentTaxBand.end - (prevTaxBand?.end ?? 0)) *
-          (currentTaxBand.rate / 100);
-        amounts.push({ id: currentTaxBand.id, amount: taxAmount });
-      }
-    }
-    return amounts;
-  }
+  useEffect(() => {
+    const initialTotals = calculateTotals({
+      income: Incomes2022.average,
+      gst: 0,
+      otherTax: 0
+    });
+    setTotals(initialTotals);
+  }, []);
 
   return (
     <>
       <header role="banner">
-        <p>Taxreceipt.co.nz</p>
+        <p>{Content.header}</p>
       </header>
       <section className="hero" id="main">
-        <h1 id="main-title">Where did your tax go?</h1>
+        <h1 id="main-title">{Content.hero}</h1>
         <p className="hero-subtitle">
-          based on{" "}
-          <a href="https://www.treasury.govt.nz/sites/default/files/2023-05/befu23.pdf">
-            2022 Actual Core Crown Expenses
+          {Content.subHero}{" "}
+          <a href={Content.subHeroHref} target="_blank" rel="noreferrer noopener">
+            <span>{lastYear}</span> {Content.subHeroLink}
           </a>
         </p>
       </section>
 
       <main role="main" className="calculator" id="calculator-inputs">
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            calculate();
-            setIsSent(true);
-          }}
+          onSubmit={handleOnSubmit}
+          method="dialog"
         >
           <div className="calculator-flex">
             <label>
-              Your Annual Income
+              {Content.incomeInputLabel}
               <i>$</i>
               <input
-                type="number"
-                id="input-income"
                 className="calculator-input"
+                id="input-income"
+                inputMode="numeric"
                 onChange={handleIncomeChange}
-                value={income}
+                pattern="\d{1,}[\,\.]{1}\d{1,2}"
                 placeholder="0.00"
-                step="0.01"
+                type="text"
+                value={incomeInput ?? ""}
               />
             </label>
             <label>
-              Your Annual Spending (Optional)
+              {Content.gstInputLabel}
               <i>$</i>
               <input
-                type="number"
                 className="calculator-input"
                 id="input-spending"
+                inputMode="numeric"
                 onChange={handleGSTChange}
-                value={gstInput}
+                pattern="\d{1,}[\,\.]{1}\d{1,2}"
                 placeholder="0.00"
-                step="0.01"
+                type="text"
+                value={gstInput ?? ""}
               />
             </label>
             <label>
-              Any Other Tax Payments (Optional)
+              {Content.otherTaxInputLabel}
               <i>$</i>
               <input
-                type="number"
-                id="input-other"
                 className="calculator-input"
+                id="input-other"
+                inputMode="numeric"
                 onChange={handleOtherTaxChange}
-                value={otherTaxInput}
+                pattern="\d{1,}[\,\.]{1}\d{1,2}"
                 placeholder="0.00"
-                step="0.01"
+                type="text"
+                value={otherTaxInput ?? ""}
               />
             </label>
           </div>
-          <button onClick={calculate}>Calculate</button>
+          <button type="submit">{Content.formSubmit}</button>
         </form>
         {isSent && (
           <section className="contribution">
-            <p>Income Tax Contribution: ${calculateTaxAlone().toFixed(2)}</p>·
-            <p>GST Contribution: ${gstInput * 0.15}</p>·
-            <p>Other Tax Contributions: ${otherTaxInput}</p>
+            <p>{Content.totalsIncome}{totals.taxFromIncome}</p>
+            <p>{Content.totalsGst}{totals.taxFromGST}</p>
+            <p>{Content.totalsOtherTax}{totals.taxFromGST}</p>
           </section>
         )}
       </main>
+      <div>
+        <section className="tax-result" id="calculator-results">
+          <h2>
+            {isSent ? Content.summaryStart : Content.summaryStartMedian}
+            <strong>{isSent ? totals.income : formatCurrency(Incomes2022.median)}</strong>
+            {Content.summaryMiddle}
+            <strong>{totals.totalTax}</strong>
+            {Content.summaryEnd}
+            {lastYear}:
+          </h2>
+        </section>
+        <section className="summary" id="summary">
+          {totals.totalsPerCategory.map(({
+            id,
+            name,
+            paid: {
+              amount,
+              percentage
+            }
+          }) => (
+            <div className="summary-primary" key={`/#${id}`}>
+              <a className="summary-header" href={`/#${id}`}>
+                {name}
+              </a>
+              <p className="summary-value">
+                {amount}
+              </p>
+              <aside>
+                {percentage}{Content.ofTotalSpend}
+              </aside>
+            </div>
+          ))}{" "}
+          <div className="summary-primary last-2"></div>
+          <div className="summary-primary last"></div>
+        </section>
 
-      {isSent && (
-        <div>
-          <section className="tax-result" id="calculator-results">
-            <h2>
-              Based on a total tax bill of{" "}
-              <strong>${(total_tax * 1).toFixed(2)}</strong>, this is where your
-              money was spent in 2022
-            </h2>
+        {totals.totalsPerCategory.map(({
+          id,
+          name,
+          paid: {
+            amount,
+            percentage
+          },
+          children
+        }) => (
+          <section className="result" key={id} id={id}>
+            <div className="result-primary">
+              <h3 className="result-header">{name}</h3>
+              <p className="result-value">
+                {amount}
+              </p>{" "}
+              <aside>
+                {percentage}{Content.ofTotalSpend}
+              </aside>
+            </div>
+            <div className="result-secondary">
+              {children.map((child) => (
+                <div key={child.name} className="result-secondary-item">
+                  <h3 className="result-header-secondary">{child.name}</h3>
+                  <p className="result-value-secondary">
+                    {child.paid.amount}
+                  </p>
+                  <aside>
+                    {child.paid.percentageOfParent}{Content.ofDepartmentSpend}
+                  </aside>
+                  <aside>
+                    {child.paid.percentage}{Content.ofTotalSpend}
+                  </aside>
+                </div>
+              ))}
+            </div>
           </section>
-          <section className="summary" id="summary">
-            {Budget.budget.category.map((id) => (
-              <div className="summary-primary">
-                <a className="summary-header" href={`/#${id.id}`}>
-                  {id.name}
-                </a>
-                <p className="summary-value">
-                  $
-                  {((id.value / Budget.budget.totalSpend) * total_tax).toFixed(
-                    2
-                  )}
-                </p>
-                <aside>
-                  {((id.value / Budget.budget.totalSpend) * 100).toFixed(2)}% of
-                  total spend
-                </aside>
-              </div>
-            ))}{" "}
-            <div className="summary-primary last-2"></div>
-            <div className="summary-primary last"></div>
-          </section>
-
-          {Budget.budget.category.map((id) => (
-            <section className="result" id={id.id}>
-              <div className="result-primary">
-                <h3 className="result-header">{id.name}</h3>
-                <p className="result-value">
-                  $
-                  {((id.value / Budget.budget.totalSpend) * total_tax).toFixed(
-                    2
-                  )}
-                </p>{" "}
-                <aside>
-                  {((id.value / Budget.budget.totalSpend) * 100).toFixed(2)}% of
-                  total spend
-                </aside>
-              </div>
-              <div className="result-secondary">
-                {id.children.map((name) => (
-                  <div className="result-secondary-item">
-                    <h3 className="result-header-secondary">{name.name}</h3>
-                    <p className="result-value-secondary">
-                      $
-                      {(
-                        (name.value / Budget.budget.totalSpend) *
-                        total_tax
-                      ).toFixed(2)}
-                    </p>
-                    <aside>
-                      {((name.value / id.value) * 100).toFixed(2)}% of
-                      department spend
-                    </aside>
-                    <aside>
-                      {((name.value / Budget.budget.totalSpend) * 100).toFixed(
-                        2
-                      )}
-                      % of total spend
-                    </aside>
-                  </div>
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
-      )}
+        ))}
+      </div>
       <footer>
-        Made by <a href="https://walt.online"> Walter Lim</a>
+        {Content.madeBy}
+        <a href={Content.madeByAuthorHref} target="_blank" rel="noreferrer noopener">{Content.madeByAuthor}</a>
         <br />
-        <a href="https://github.com/waltzaround/tax-receipts">
-          Source code available here
+        <a href={Content.madeByRepoHref} target="_blank" rel="noreferrer noopener">
+          {Content.madeByRepoText}
         </a>
       </footer>
     </>
