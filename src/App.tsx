@@ -100,7 +100,7 @@ function App() {
       </header>
       <section className="hero">
         <h1>Where did your tax go?</h1>
-        <p>
+        <p className="hero-subtitle">
           based on{" "}
           <a href="https://www.treasury.govt.nz/sites/default/files/2023-05/befu23.pdf">
             2022 Actual Core Crown Expenses
@@ -174,6 +174,22 @@ function App() {
               went
             </h2>
           </section>
+          <section className="summary" id="summary">
+            {Budget.budget.category.map((id) => (
+              <div className="summary-primary">
+                <h3 className="summary-header">{id.name}</h3>
+                <p className="summary-value">
+                  $
+                  {((id.value / Budget.budget.totalSpend) * total_tax).toFixed(
+                    2
+                  )}
+                </p>
+              </div>
+            ))}{" "}
+            <div className="summary-primary last-2"></div>
+            <div className="summary-primary last"></div>
+          </section>
+
           {Budget.budget.category.map((id) => (
             <section className="result">
               <div className="result-primary">
@@ -203,6 +219,9 @@ function App() {
           ))}
         </div>
       )}
+      <footer>
+        Made by <a href="https://walt.online"> Walter Lim</a>
+      </footer>
     </>
   );
 }

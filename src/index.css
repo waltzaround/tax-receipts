@@ -94,6 +94,10 @@ header {
   margin-bottom: 2.5rem;
 }
 
+.hero-subtitle {
+  margin-top: 1rem;
+}
+
 .calculator {
   padding: 1.5rem;
   background: #FFFFFF;
@@ -106,6 +110,7 @@ header {
   display: flex;
   gap: 1rem;
   padding-bottom: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .calculator-flex label {
@@ -139,6 +144,39 @@ header {
 
   line-height: 1;
 
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #000000;
+  background-color: black;
+  margin-top: 2.5rem;
+}
+
+.summary-primary {
+  flex: 1;
+  background: white;
+  padding: 1rem;
+}
+
+.summary-header {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 0.25rem;
+  ;
+}
+
+.summary-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.tax-result h2 {
+  font-size: 1.75rem;
 }
 
 .result {
@@ -187,4 +225,38 @@ header {
   font-size: 1.5rem;
 
   font-weight: 600;
+}
+
+footer {
+  margin: 2.5rem 0;
+}
+
+@media (max-width: 1200px) {
+
+  .result-secondary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .last {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+
+  .result-secondary {
+    grid-template-columns: 1fr;
+  }
+
+  .summary {
+    grid-template-columns: 1fr;
+  }
+
+  .last-2 {
+    display: none;
+  }
 }

@@ -4,107 +4,12 @@
         "category": [
             {
                 "id": "social",
-                "name": "Social Security and welfare",
+                "name": "Social Security and Welfare",
                 "value": 42860,
                 "children": [
                     {
-                        "name": "Departmental expenses",
-                        "value": 2747,
-                        "link": ""
-                    },
-                    {
-                        "name": "Social rehabilitation and compensation",
-                        "value": 358,
-                        "link": ""
-                    },
-                    {
-                        "name": "Flexi-wage subsidy",
-                        "value": 59,
-                        "link": ""
-                    },
-                    {
                         "name": "New Zealand Superannuation",
                         "value": 17764,
-                        "link": ""
-                    },
-                    {
-                        "name": "Jobseeker Support and Emergency Benefit",
-                        "value": 3330,
-                        "link": ""
-                    },
-                    {
-                        "name": "Supported living payment",
-                        "value": 2047,
-                        "link": ""
-                    },
-                    {
-                        "name": "Sole parent support",
-                        "value": 1704,
-                        "link": ""
-                    },
-                    {
-                        "name": "Family Tax Credit",
-                        "value": 2017,
-                        "link": ""
-                    },
-                    {
-                        "name": "Other working for families tax credits",
-                        "value": 519,
-                        "link": ""
-                    },
-                    {
-                        "name": "Accommodation Assistance",
-                        "value": 2386,
-                        "link": ""
-                    },
-                    {
-                        "name": "Income-Related Rents",
-                        "value": 1323,
-                        "link": ""
-                    },
-                    {
-                        "name": "Disability Assistance",
-                        "value": 412,
-                        "link": ""
-                    },
-                    {
-                        "name": "Covid leave support",
-                        "value": 471,
-                        "link": ""
-                    },
-                    {
-                        "name": "Winter energy",
-                        "value": 513,
-                        "link": ""
-                    },
-                    {
-                        "name": "Best start",
-                        "value": 308,
-                        "link": ""
-                    },
-                    {
-                        "name": "Orphans Unsupported Childs Benefit",
-                        "value": 313,
-                        "link": ""
-                    },
-                    {
-                        "name": "Hardship Assistance",
-                        "value": 497,
-                        "link": ""
-                    },
-                    {
-                        "name": "Paid Parental Leave",
-                        "value": 603,
-                        "link": ""
-                    },
-                    {
-                        "name": "Childcare Assistance",
-                        "value": 132,
-                        "link": ""
-                    },
-                    {
-                        "name": "Veterans Pensions",
-                        "value": 134,
                         "link": ""
                     },
                     {
@@ -113,30 +18,125 @@
                         "link": ""
                     },
                     {
-                        "name": "Other benefits",
-                        "value": 25,
+                        "name": "Jobseeker Support and Emergency Benefit",
+                        "value": 3330,
+                        "link": ""
+                    },
+                    {
+                        "name": "Departmental expenses",
+                        "value": 2747,
+                        "link": ""
+                    },
+                    {
+                        "name": "Accommodation Assistance",
+                        "value": 2386,
+                        "link": ""
+                    },
+                    {
+                        "name": "Supported living payment",
+                        "value": 2047,
+                        "link": ""
+                    },
+                    {
+                        "name": "Family Tax Credit",
+                        "value": 2017,
+                        "link": ""
+                    },
+                    {
+                        "name": "Sole parent support",
+                        "value": 1704,
+                        "link": ""
+                    },
+                    {
+                        "name": "Income-Related Rents",
+                        "value": 1323,
+                        "link": ""
+                    },
+                    {
+                        "name": "Paid Parental Leave",
+                        "value": 603,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other working for families tax credits",
+                        "value": 519,
+                        "link": ""
+                    },
+                    {
+                        "name": "Winter energy",
+                        "value": 513,
                         "link": ""
                     },
                     {
                         "name": "Other non-departmental expenses",
                         "value": 509,
                         "link": ""
+                    },
+                    {
+                        "name": "Hardship Assistance",
+                        "value": 497,
+                        "link": ""
+                    },
+                    {
+                        "name": "Covid leave support",
+                        "value": 471,
+                        "link": ""
+                    },
+                    {
+                        "name": "Disability Assistance",
+                        "value": 412,
+                        "link": ""
+                    },
+                    {
+                        "name": "Social rehabilitation and compensation",
+                        "value": 358,
+                        "link": ""
+                    },
+                    {
+                        "name": "Orphans Unsupported Childs Benefit",
+                        "value": 313,
+                        "link": ""
+                    },
+                    {
+                        "name": "Best start",
+                        "value": 308,
+                        "link": ""
+                    },
+                    {
+                        "name": "Veterans Pensions",
+                        "value": 134,
+                        "link": ""
+                    },
+                    {
+                        "name": "Childcare Assistance",
+                        "value": 132,
+                        "link": ""
+                    },
+                    {
+                        "name": "Flexi-wage subsidy",
+                        "value": 59,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other benefits",
+                        "value": 25,
+                        "link": ""
                     }
                 ]
             },
             {
                 "id": "health",
-                "name": "Health Expenses",
+                "name": "Health ",
                 "value": 27781,
                 "children": [
                     {
-                        "name": "Departmental Outputs",
-                        "value": 368,
+                        "name": "Purchasing of health services",
+                        "value": 17882,
                         "link": ""
                     },
                     {
-                        "name": "Purchasing of health services",
-                        "value": 17882,
+                        "name": "National health response to COVID-19 ",
+                        "value": 4965,
                         "link": ""
                     },
                     {
@@ -145,18 +145,18 @@
                         "link": ""
                     },
                     {
-                        "name": "Other non-departmental outputs",
-                        "value": 770,
-                        "link": ""
-                    },
-                    {
                         "name": "Health payments to ACC",
                         "value": 896,
                         "link": ""
                     },
                     {
-                        "name": "National health response to COVID-19 ",
-                        "value": 4965,
+                        "name": "Other non-departmental outputs",
+                        "value": 770,
+                        "link": ""
+                    },
+                    {
+                        "name": "Departmental Outputs",
+                        "value": 368,
                         "link": ""
                     },
                     {
@@ -168,17 +168,17 @@
             },
             {
                 "id": "education",
-                "name": "Education Expenses",
+                "name": "Education ",
                 "value": 18023,
                 "children": [
                     {
-                        "name": "Early childhood education",
-                        "value": 2247,
+                        "name": "Primary Schools",
+                        "value": 4122,
                         "link": ""
                     },
                     {
-                        "name": "Primary Schools",
-                        "value": 4122,
+                        "name": "Tertiary Tuition",
+                        "value": 3205,
                         "link": ""
                     },
                     {
@@ -187,13 +187,48 @@
                         "link": ""
                     },
                     {
-                        "name": "School Transport",
-                        "value": 210,
+                        "name": "Early childhood education",
+                        "value": 2247,
+                        "link": ""
+                    },
+                    {
+                        "name": "Departmental expenses",
+                        "value": 1962,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other tertiary funding",
+                        "value": 755,
                         "link": ""
                     },
                     {
                         "name": "Special needs support",
                         "value": 658,
+                        "link": ""
+                    },
+                    {
+                        "name": "Student allowances",
+                        "value": 556,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other education expenses",
+                        "value": 586,
+                        "link": ""
+                    },
+                    {
+                        "name": "COVID-19 apprentice support",
+                        "value": 255,
+                        "link": ""
+                    },
+                    {
+                        "name": "School Transport",
+                        "value": 210,
+                        "link": ""
+                    },
+                    {
+                        "name": "School lunch programme",
+                        "value": 204,
                         "link": ""
                     },
                     {
@@ -207,55 +242,87 @@
                         "link": ""
                     },
                     {
-                        "name": "School lunch programme",
-                        "value": 204,
-                        "link": ""
-                    },
-                    {
-                        "name": "Tertiary Tuition",
-                        "value": 3205,
-                        "link": ""
-                    },
-                    {
-                        "name": "Other tertiary funding",
-                        "value": 755,
-                        "link": ""
-                    },
-                    {
-                        "name": "Student allowances",
-                        "value": 556,
-                        "link": ""
-                    },
-                    {
-                        "name": "Departmental expenses",
-                        "value": 1962,
-                        "link": ""
-                    },
-                    {
-                        "name": "COVID-19 apprentice support",
-                        "value": 255,
-                        "link": ""
-                    },
-                    {
                         "name": "Training incentive allowance",
                         "value": 9,
                         "link": ""
+                    }
+                ]
+            },
+            {
+                "id": "econ_and_industry",
+                "name": "Economic and industrial services ",
+                "value": 8078,
+                "children": [
+                    {
+                        "name": "COVID-19 Resurgence Support Payments",
+                        "value": 4019,
+                        "link": ""
                     },
                     {
-                        "name": "Other education expenses",
-                        "value": 586,
+                        "name": "Non-departmental outputs",
+                        "value": 1697,
+                        "link": ""
+                    },
+                    {
+                        "name": "KiwiSaver (includes HomeStart grant)",
+                        "value": 964,
+                        "link": ""
+                    },
+                    {
+                        "name": "Departmental outputs",
+                        "value": 633,
+                        "link": ""
+                    },
+                    {
+                        "name": "Shovel ready funding to support energy projects",
+                        "value": 559,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other expenses",
+                        "value": 344,
+                        "link": ""
+                    },
+                    {
+                        "name": "Initial fair value write-down on the Small Business Cashflow Scheme loans",
+                        "value": 230,
+                        "link": ""
+                    },
+                    {
+                        "name": "Shovel ready project funding to support regional projects",
+                        "value": 174,
+                        "link": ""
+                    },
+                    {
+                        "name": "Worker redeployment package",
+                        "value": 6,
+                        "link": ""
+                    },
+                    {
+                        "name": "Employment Initiatives",
+                        "value": 4,
                         "link": ""
                     }
                 ]
             },
             {
                 "id": "core_govt",
-                "name": "Core Government Services Expenses",
+                "name": "Core Government Services ",
                 "value": 5720,
                 "children": [
                     {
+                        "name": "Tax receivable write-down and impairments",
+                        "value": 3135,
+                        "link": ""
+                    },
+                    {
                         "name": "Departmental expenses",
                         "value": 2271,
+                        "link": ""
+                    },
+                    {
+                        "name": "Non-departmental expenses",
+                        "value": 928,
                         "link": ""
                     },
                     {
@@ -264,8 +331,8 @@
                         "link": ""
                     },
                     {
-                        "name": "Tax receivable write-down and impairments",
-                        "value": 3135,
+                        "name": "Other Expenses",
+                        "value": 709,
                         "link": ""
                     },
                     {
@@ -277,22 +344,12 @@
                         "name": "Indemnity and guarantee expenses",
                         "value": 3,
                         "link": ""
-                    },
-                    {
-                        "name": "Non-departmental expenses",
-                        "value": 928,
-                        "link": ""
-                    },
-                    {
-                        "name": "Other Expenses",
-                        "value": 709,
-                        "link": ""
                     }
                 ]
             },
             {
                 "id": "law_order",
-                "name": "Law and Order Expenses",
+                "name": "Law and Order ",
                 "value": 4907,
                 "children": [
                     {
@@ -324,37 +381,12 @@
             },
             {
                 "id": "transport_comms",
-                "name": "Transport and communication expenses",
+                "name": "Transport and communication ",
                 "value": 4657,
                 "children": [
                     {
-                        "name": "Departmental outputs",
-                        "value": 82,
-                        "link": ""
-                    },
-                    {
                         "name": "Waka Kotahi NZ Transport Agency",
                         "value": 2782,
-                        "link": ""
-                    },
-                    {
-                        "name": "Rail Funding",
-                        "value": 310,
-                        "link": ""
-                    },
-                    {
-                        "name": "Funding to support the aviation and transport Industries",
-                        "value": 554,
-                        "link": ""
-                    },
-                    {
-                        "name": "Funding to support Waka Kotahi due to impact of COVID-19",
-                        "value": 128,
-                        "link": ""
-                    },
-                    {
-                        "name": "Transport temporary relief package",
-                        "value": 411,
                         "link": ""
                     },
                     {
@@ -363,72 +395,57 @@
                         "link": ""
                     },
                     {
+                        "name": "Funding to support the aviation and transport Industries",
+                        "value": 554,
+                        "link": ""
+                    },
+                    {
+                        "name": "Transport temporary relief package",
+                        "value": 411,
+                        "link": ""
+                    },
+                    {
+                        "name": "Rail Funding",
+                        "value": 310,
+                        "link": ""
+                    },
+                    {
                         "name": "Other expenses",
                         "value": 306,
+                        "link": ""
+                    },
+                    {
+                        "name": "Funding to support Waka Kotahi due to impact of COVID-19",
+                        "value": 128,
+                        "link": ""
+                    },
+                    {
+                        "name": "Departmental outputs",
+                        "value": 82,
                         "link": ""
                     }
                 ]
             },
             {
-                "id": "econ_and_industry",
-                "name": "Economic and industrial services expenses",
-                "value": 8078,
+                "id": "finance",
+                "name": "Finance costs",
+                "value": 2884,
                 "children": [
                     {
-                        "name": "Departmental outputs",
-                        "value": 633,
+                        "name": "Interest on financial liabilities",
+                        "value": 2796,
                         "link": ""
                     },
                     {
-                        "name": "Employment Initiatives",
-                        "value": 4,
-                        "link": ""
-                    },
-                    {
-                        "name": "Non-departmental outputs",
-                        "value": 1697,
-                        "link": ""
-                    },
-                    {
-                        "name": "KiwiSaver (includes HomeStart grant)",
-                        "value": 964,
-                        "link": ""
-                    },
-                    {
-                        "name": "Initial fair value write-down on the Small Business Cashflow Scheme loans",
-                        "value": 230,
-                        "link": ""
-                    },
-                    {
-                        "name": "COVID-19 Resurgence Support Payments",
-                        "value": 4019,
-                        "link": ""
-                    },
-                    {
-                        "name": "Shovel ready funding to support energy projects",
-                        "value": 559,
-                        "link": ""
-                    },
-                    {
-                        "name": "Shovel ready project funding to support regional projects",
-                        "value": 174,
-                        "link": ""
-                    },
-                    {
-                        "name": "Worker redeployment package",
-                        "value": 6,
-                        "link": ""
-                    },
-                    {
-                        "name": "Other expenses",
-                        "value": 344,
+                        "name": "Interest unwind on provisions",
+                        "value": 88,
                         "link": ""
                     }
                 ]
             },
             {
                 "id": "defence",
-                "name": "Defence expenses",
+                "name": "Defence ",
                 "value": 2832,
                 "children": [
                     {
@@ -444,109 +461,8 @@
                 ]
             },
             {
-                "id": "heritage_culture_recreation",
-                "name": "Heritage, culture and recreation expenses",
-                "value": 1468,
-                "children": [
-                    {
-                        "name": "Departmental outputs",
-                        "value": 374,
-                        "link": ""
-                    },
-                    {
-                        "name": "Non-departmental outputs",
-                        "value": 809,
-                        "link": ""
-                    },
-                    {
-                        "name": "Screen Production Grants",
-                        "value": 69,
-                        "link": ""
-                    },
-                    {
-                        "name": "COVID-19 cultural sector response",
-                        "value": 73,
-                        "link": ""
-                    },
-                    {
-                        "name": "Other expenses",
-                        "value": 143,
-                        "link": ""
-                    }
-                ]
-            },
-            {
-                "id": "primary_services",
-                "name": "Primary Services expenses",
-                "value": 949,
-                "children": [
-                    {
-                        "name": "Departmental Expenses",
-                        "value": 724,
-                        "link": ""
-                    },
-                    {
-                        "name": "Non-departmental outputs",
-                        "value": 106,
-                        "link": ""
-                    },
-                    {
-                        "name": "Other expenses",
-                        "value": 119,
-                        "link": ""
-                    }
-                ]
-            },
-            {
-                "id": "housing_community",
-                "name": "Housing and community development expenses",
-                "value": 2033,
-                "children": [
-                    {
-                        "name": "Departmental outputs",
-                        "value": 255,
-                        "link": ""
-                    },
-                    {
-                        "name": "Housing subsidies",
-                        "value": 4,
-                        "link": ""
-                    },
-                    {
-                        "name": "Community Services",
-                        "value": 438,
-                        "link": ""
-                    },
-                    {
-                        "name": "Housing Acceleration Fund",
-                        "value": 22,
-                        "link": ""
-                    },
-                    {
-                        "name": "Water Infrastructure",
-                        "value": 143,
-                        "link": ""
-                    },
-                    {
-                        "name": "Shovel ready project funding to support housing projects",
-                        "value": 143,
-                        "link": ""
-                    },
-                    {
-                        "name": "Other non-departmental expenses, KiwiBuild, transitional housing costs",
-                        "value": 987,
-                        "link": ""
-                    },
-                    {
-                        "name": "Other expenses",
-                        "value": 53,
-                        "link": ""
-                    }
-                ]
-            },
-            {
                 "id": "environment",
-                "name": "Environmental protection expenses",
+                "name": "Environmental protection ",
                 "value": 2549,
                 "children": [
                     {
@@ -577,18 +493,102 @@
                 ]
             },
             {
-                "id": "finance",
-                "name": "Finance costs",
-                "value": 2884,
+                "id": "housing_community",
+                "name": "Housing and community development ",
+                "value": 2033,
                 "children": [
                     {
-                        "name": "Interest on financial liabilities",
-                        "value": 2796,
+                        "name": "Other non-departmental expenses, KiwiBuild, transitional housing costs",
+                        "value": 987,
                         "link": ""
                     },
                     {
-                        "name": "Interest unwind on provisions",
-                        "value": 88,
+                        "name": "Community Services",
+                        "value": 438,
+                        "link": ""
+                    },
+                    {
+                        "name": "Departmental outputs",
+                        "value": 255,
+                        "link": ""
+                    },
+                    {
+                        "name": "Water Infrastructure",
+                        "value": 143,
+                        "link": ""
+                    },
+                    {
+                        "name": "Shovel ready project funding to support housing projects",
+                        "value": 143,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other expenses",
+                        "value": 53,
+                        "link": ""
+                    },
+                    {
+                        "name": "Housing Acceleration Fund",
+                        "value": 22,
+                        "link": ""
+                    },
+                    {
+                        "name": "Housing subsidies",
+                        "value": 4,
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": "heritage_culture_recreation",
+                "name": "Heritage, culture and recreation ",
+                "value": 1468,
+                "children": [
+                    {
+                        "name": "Non-departmental outputs",
+                        "value": 809,
+                        "link": ""
+                    },
+                    {
+                        "name": "Departmental outputs",
+                        "value": 374,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other expenses",
+                        "value": 143,
+                        "link": ""
+                    },
+                    {
+                        "name": "COVID-19 cultural sector response",
+                        "value": 73,
+                        "link": ""
+                    },
+                    {
+                        "name": "Screen Production Grants",
+                        "value": 69,
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": "primary_services",
+                "name": "Primary Services ",
+                "value": 949,
+                "children": [
+                    {
+                        "name": "Departmental Expenses",
+                        "value": 724,
+                        "link": ""
+                    },
+                    {
+                        "name": "Other expenses",
+                        "value": 119,
+                        "link": ""
+                    },
+                    {
+                        "name": "Non-departmental outputs",
+                        "value": 106,
                         "link": ""
                     }
                 ]
