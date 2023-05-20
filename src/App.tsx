@@ -109,7 +109,7 @@ function App() {
 
   return (
     <>
-      <header>
+      <header role="banner">
         <p>Taxreceipt.co.nz</p>
       </header>
       <section className="hero" id="main">
@@ -122,7 +122,7 @@ function App() {
         </p>
       </section>
 
-      <section className="calculator" id="calculator-inputs">
+      <main role="main" className="calculator" id="calculator-inputs">
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -180,7 +180,7 @@ function App() {
             <p>Other Tax Contributions: ${otherTaxInput}</p>
           </section>
         )}
-      </section>
+      </main>
 
       {isSent && (
         <div>
