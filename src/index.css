@@ -175,13 +175,16 @@ header {
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
-  ;
+  text-decoration: underline;
+
 }
 
-.summary-value {
+.summary-header .summary-value {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  text-decoration: none;
+  ;
 }
 
 .contribution {

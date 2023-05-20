@@ -110,10 +110,10 @@ function App() {
   return (
     <>
       <header>
-        <aside>Taxreceipt.co.nz</aside>
+        <p>Taxreceipt.co.nz</p>
       </header>
-      <section className="hero">
-        <h1>Where did your tax go?</h1>
+      <section className="hero" id="main">
+        <h1 id="main-title">Where did your tax go?</h1>
         <p className="hero-subtitle">
           based on{" "}
           <a href="https://www.treasury.govt.nz/sites/default/files/2023-05/befu23.pdf">
@@ -122,7 +122,7 @@ function App() {
         </p>
       </section>
 
-      <section className="calculator">
+      <section className="calculator" id="calculator-inputs">
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -184,7 +184,7 @@ function App() {
 
       {isSent && (
         <div>
-          <section className="tax-result">
+          <section className="tax-result" id="calculator-results">
             <h2>
               Based on a total tax bill of{" "}
               <strong>${(total_tax * 1).toFixed(2)}</strong>, this is where your
@@ -194,7 +194,9 @@ function App() {
           <section className="summary" id="summary">
             {Budget.budget.category.map((id) => (
               <div className="summary-primary">
-                <h3 className="summary-header">{id.name}</h3>
+                <a className="summary-header" href={`/#${id.id}`}>
+                  {id.name}
+                </a>
                 <p className="summary-value">
                   $
                   {((id.value / Budget.budget.totalSpend) * total_tax).toFixed(
@@ -212,7 +214,7 @@ function App() {
           </section>
 
           {Budget.budget.category.map((id) => (
-            <section className="result">
+            <section className="result" id={id.id}>
               <div className="result-primary">
                 <h3 className="result-header">{id.name}</h3>
                 <p className="result-value">
