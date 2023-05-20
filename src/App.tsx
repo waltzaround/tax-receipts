@@ -258,6 +258,10 @@ function App() {
       )}
       <footer>
         Made by <a href="https://walt.online"> Walter Lim</a>
+        <br />
+        <a href="https://github.com/waltzaround/tax-receipts">
+          Source code available here
+        </a>
       </footer>
     </>
   );
