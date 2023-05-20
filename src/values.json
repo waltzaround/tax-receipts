@@ -10,117 +10,117 @@
                     {
                         "name": "New Zealand Superannuation",
                         "value": 17764,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/eligibility/seniors/superannuation/index.html"
                     },
                     {
                         "name": "Wage Subsidy Scheme",
                         "value": 4689,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/covid-19/previous-payments/index.html"
                     },
                     {
                         "name": "Jobseeker Support and Emergency Benefit",
                         "value": 3330,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/products/a-z-benefits/jobseeker-support.html"
                     },
                     {
                         "name": "Departmental expenses",
                         "value": 2747,
-                        "link": ""
+                        "link": "https://www.msd.govt.nz/"
                     },
                     {
                         "name": "Accommodation Assistance",
                         "value": 2386,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/products/a-z-benefits/accommodation-supplement.html"
                     },
                     {
                         "name": "Supported living payment",
                         "value": 2047,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/products/a-z-benefits/supported-living-payment.html"
                     },
                     {
                         "name": "Family Tax Credit",
                         "value": 2017,
-                        "link": ""
+                        "link": "https://www.msd.govt.nz/about-msd-and-our-work/work-programmes/welfare-overhaul/working-for-families-consultation-guidance-material.html#:~:text=Family%20Tax%20Credit%20is%20the,other%20child%20in%20a%20family."
                     },
                     {
                         "name": "Sole parent support",
                         "value": 1704,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/products/a-z-benefits/sole-parent-support.html"
                     },
                     {
                         "name": "Income-Related Rents",
                         "value": 1323,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/housing/live-in-home/live-in-public-housing/calculating-rent-payments.html"
                     },
                     {
                         "name": "Paid Parental Leave",
                         "value": 603,
-                        "link": ""
+                        "link": "https://www.ird.govt.nz/paid-parental-leave"
                     },
                     {
                         "name": "Other working for families tax credits",
                         "value": 519,
-                        "link": ""
+                        "link": "https://www.ird.govt.nz/working-for-families/payment-types"
                     },
                     {
                         "name": "Winter energy",
                         "value": 513,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/products/a-z-benefits/winter-energy-payment.html"
                     },
                     {
                         "name": "Other non-departmental expenses",
                         "value": 509,
-                        "link": ""
+                        "link": "https://msd.govt.nz/"
                     },
                     {
                         "name": "Hardship Assistance",
                         "value": 497,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/products/a-z-benefits/advance-payment-of-benefit.html"
                     },
                     {
                         "name": "Covid leave support",
                         "value": 471,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/covid-19/employer-support/leave-support-scheme/index.html"
                     },
                     {
                         "name": "Disability Assistance",
                         "value": 412,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/eligibility/lost-job/health-condition.html"
                     },
                     {
                         "name": "Social rehabilitation and compensation",
                         "value": 358,
-                        "link": ""
+                        "link": "https://www.acc.co.nz/"
                     },
                     {
                         "name": "Orphans Unsupported Childs Benefit",
                         "value": 313,
-                        "link": ""
+                        "link": "https://practice.orangatamariki.govt.nz/our-work/interventions/child-support-unsupported-childs-benefit-and-orphans-benefit/#:~:text=The%20Unsupported%20Child's%20Benefit%20is,a%20wh%C4%81nau%20or%20family%20breakdown."
                     },
                     {
                         "name": "Best start",
                         "value": 308,
-                        "link": ""
+                        "link": "https://www.govt.nz/browse/family-and-whanau/financial-help-for-your-family/apply-for-best-start-payments/"
                     },
                     {
                         "name": "Veterans Pensions",
                         "value": 134,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/products/a-z-benefits/veterans-pension.html"
                     },
                     {
                         "name": "Childcare Assistance",
                         "value": 132,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/products/a-z-benefits/childcare-subsidy.html"
                     },
                     {
                         "name": "Flexi-wage subsidy",
                         "value": 59,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/employers/subsidies-training-and-other-help/flexi-wage.html"
                     },
                     {
                         "name": "Other benefits",
                         "value": 25,
-                        "link": ""
+                        "link": "https://msd.govt.nz/"
                     }
                 ]
             },
@@ -132,37 +132,37 @@
                     {
                         "name": "Purchasing of health services",
                         "value": 17882,
-                        "link": ""
+                        "link": "https://www.health.govt.nz/about-ministry/corporate-publications/annual-reports"
                     },
                     {
                         "name": "National health response to COVID-19 ",
                         "value": 4965,
-                        "link": ""
+                        "link": "https://covid19.govt.nz/"
                     },
                     {
                         "name": "National disability support services",
                         "value": 1659,
-                        "link": ""
+                        "link": "https://www.healthnavigator.org.nz/healthy-living/d/disability-services/"
                     },
                     {
                         "name": "Health payments to ACC",
                         "value": 896,
-                        "link": ""
+                        "link": "https://www.acc.co.nz/"
                     },
                     {
                         "name": "Other non-departmental outputs",
                         "value": 770,
-                        "link": ""
+                        "link": "https://www.health.govt.nz/"
                     },
                     {
                         "name": "Departmental Outputs",
                         "value": 368,
-                        "link": ""
+                        "link": "https://www.health.govt.nz/"
                     },
                     {
                         "name": "Other expenses",
                         "value": 82,
-                        "link": ""
+                        "link": "https://www.health.govt.nz/"
                     }
                 ]
             },
@@ -174,77 +174,77 @@
                     {
                         "name": "Primary Schools",
                         "value": 4122,
-                        "link": ""
+                        "link": "https://www.education.govt.nz/our-work/publications/annual-report/annual-report-2022/"
                     },
                     {
                         "name": "Tertiary Tuition",
                         "value": 3205,
-                        "link": ""
+                        "link": "https://www.tec.govt.nz/"
                     },
                     {
                         "name": "Secondary Schools",
                         "value": 3135,
-                        "link": ""
+                        "link": "https://www.education.govt.nz/our-work/publications/annual-report/annual-report-2022/"
                     },
                     {
                         "name": "Early childhood education",
                         "value": 2247,
-                        "link": ""
+                        "link": "https://www.education.govt.nz/our-work/publications/annual-report/annual-report-2022/"
                     },
                     {
                         "name": "Departmental expenses",
                         "value": 1962,
-                        "link": ""
+                        "link": "https://www.education.govt.nz/"
                     },
                     {
                         "name": "Other tertiary funding",
                         "value": 755,
-                        "link": ""
+                        "link": "https://www.tec.govt.nz/"
                     },
                     {
                         "name": "Special needs support",
                         "value": 658,
-                        "link": ""
+                        "link": "https://www.education.govt.nz/school/student-support/special-education/"
                     },
                     {
                         "name": "Student allowances",
                         "value": 556,
-                        "link": ""
+                        "link": "https://www.studylink.govt.nz/products/a-z-products/student-allowance/index.html"
                     },
                     {
                         "name": "Other education expenses",
                         "value": 586,
-                        "link": ""
+                        "link": "https://www.education.govt.nz/"
                     },
                     {
                         "name": "COVID-19 apprentice support",
                         "value": 255,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/employers/subsidies-training-and-other-help/apprenticeship-boost/index.html"
                     },
                     {
                         "name": "School Transport",
                         "value": 210,
-                        "link": ""
+                        "link": "https://www.education.govt.nz/"
                     },
                     {
                         "name": "School lunch programme",
                         "value": 204,
-                        "link": ""
+                        "link": "https://www.education.govt.nz/our-work/overall-strategies-and-policies/wellbeing-in-education/free-and-healthy-school-lunches/"
                     },
                     {
                         "name": "Professional development",
                         "value": 129,
-                        "link": ""
+                        "link": "https://pld.education.govt.nz/"
                     },
                     {
                         "name": "Schooling improvement",
                         "value": 20,
-                        "link": ""
+                        "link": "https://www.education.govt.nz/"
                     },
                     {
                         "name": "Training incentive allowance",
                         "value": 9,
-                        "link": ""
+                        "link": "https://www.workandincome.govt.nz/products/a-z-benefits/training-incentive-allowance.html"
                     }
                 ]
             },
@@ -256,52 +256,52 @@
                     {
                         "name": "COVID-19 Resurgence Support Payments",
                         "value": 4019,
-                        "link": ""
+                        "link": "https://www.ird.govt.nz/covid-19/business-and-organisations/resurgence-support-payment"
                     },
                     {
                         "name": "Non-departmental outputs",
                         "value": 1697,
-                        "link": ""
+                        "link": "https://www.mbie.govt.nz/about/who-we-are/corporate-publications/annual-reports/annual-report-2021-22/"
                     },
                     {
                         "name": "KiwiSaver (includes HomeStart grant)",
                         "value": 964,
-                        "link": ""
+                        "link": "https://www.ird.govt.nz/kiwisaver"
                     },
                     {
                         "name": "Departmental outputs",
                         "value": 633,
-                        "link": ""
+                        "link": "https://www.mbie.govt.nz/about/who-we-are/corporate-publications/annual-reports/annual-report-2021-22/"
                     },
                     {
                         "name": "Shovel ready funding to support energy projects",
                         "value": 559,
-                        "link": ""
+                        "link": "https://www.mbie.govt.nz/dmsdocument/13520-delivering-the-shovel-ready-infrastructure-projects-minute-of-decision-proactiverelease-pdf"
                     },
                     {
                         "name": "Other expenses",
                         "value": 344,
-                        "link": ""
+                        "link": "https://www.mbie.govt.nz/about/who-we-are/corporate-publications/annual-reports/annual-report-2021-22/"
                     },
                     {
                         "name": "Initial fair value write-down on the Small Business Cashflow Scheme loans",
                         "value": 230,
-                        "link": ""
+                        "link": "https://www.ird.govt.nz/covid-19/business-and-organisations/sbcs"
                     },
                     {
                         "name": "Shovel ready project funding to support regional projects",
                         "value": 174,
-                        "link": ""
+                        "link": "https://www.mbie.govt.nz/dmsdocument/13520-delivering-the-shovel-ready-infrastructure-projects-minute-of-decision-proactiverelease-pdf"
                     },
                     {
                         "name": "Worker redeployment package",
                         "value": 6,
-                        "link": ""
+                        "link": "https://www.growregions.govt.nz/established-funds/what-we-have-funded/covid-19-recovery-funding/"
                     },
                     {
                         "name": "Employment Initiatives",
                         "value": 4,
-                        "link": ""
+                        "link": "https://www.mbie.govt.nz/business-and-employment/employment-and-skills/employment-strategy/aotearoa-new-zealands-employment-strategy/"
                     }
                 ]
             },
@@ -313,7 +313,7 @@
                     {
                         "name": "Tax receivable write-down and impairments",
                         "value": 3135,
-                        "link": ""
+                        "link": "https://www.treasury.govt.nz/publications/efu/budget-economic-and-fiscal-update-2023"
                     },
                     {
                         "name": "Departmental expenses",
