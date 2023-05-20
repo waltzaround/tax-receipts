@@ -54,6 +54,10 @@ h1 {
   line-height: 1.1;
 }
 
+aside {
+  color: #666;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -164,8 +168,8 @@ header {
 }
 
 .summary-header {
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 1.2rem;
+  font-weight: 700;
   margin-bottom: 0.25rem;
   ;
 }
@@ -173,6 +177,16 @@ header {
 .summary-value {
   font-size: 1.25rem;
   font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.contribution {
+  border-top: 1px solid lightgray;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
 }
 
 .tax-result h2 {
@@ -194,7 +208,7 @@ header {
 
 .result-header {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .result-value {
@@ -216,9 +230,9 @@ header {
 }
 
 .result-header-secondary {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 0.25rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .result-value-secondary {

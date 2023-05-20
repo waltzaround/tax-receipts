@@ -66,6 +66,20 @@ function App() {
     setTotalTaxInput(total_tax);
     return total_tax;
   }
+  function calculateTaxAlone() {
+    // Income tax calculation
+    const sum = calculateAmountPerTaxBand(income, taxBands);
+    function sumAmount() {
+      let total = 0;
+      for (let i = 0; i < sum.length; i++) {
+        total += sum[i].amount;
+      }
+      return total;
+    }
+    let sumsum = sumAmount();
+
+    return sumsum;
+  }
 
   type TaxBand = { id: string; end: number; rate: number };
   type BandAmount = { id: string; amount: number };
@@ -159,14 +173,17 @@ function App() {
           </div>
           <button onClick={calculate}>Calculate</button>
         </form>
+        {isSent && (
+          <section className="contribution">
+            <p>Income Tax Contribution: ${calculateTaxAlone().toFixed(2)}</p>·
+            <p>GST Contribution: ${gstInput * 0.15}</p>·
+            <p>Other Tax Contributions: ${otherTaxInput}</p>
+          </section>
+        )}
       </section>
 
       {isSent && (
         <div>
-          {/* <section>
-            <p>GST Contribution: ${parseFloat(gstInput) * 0.15}</p>
-            <p>Income Tax Contribution: ${parseFloat(taxAfterSubmission)}</p>
-          </section> */}
           <section className="tax-result">
             <h2>
               Based on a total tax bill of{" "}
@@ -184,6 +201,10 @@ function App() {
                     2
                   )}
                 </p>
+                <aside>
+                  {((id.value / Budget.budget.totalSpend) * 100).toFixed(2)}% of
+                  total budget
+                </aside>
               </div>
             ))}{" "}
             <div className="summary-primary last-2"></div>
@@ -199,7 +220,11 @@ function App() {
                   {((id.value / Budget.budget.totalSpend) * total_tax).toFixed(
                     2
                   )}
-                </p>
+                </p>{" "}
+                <aside>
+                  {((id.value / Budget.budget.totalSpend) * 100).toFixed(2)}% of
+                  total budget
+                </aside>
               </div>
               <div className="result-secondary">
                 {id.children.map((name) => (
@@ -212,6 +237,16 @@ function App() {
                         total_tax
                       ).toFixed(2)}
                     </p>
+                    <aside>
+                      {((name.value / id.value) * 100).toFixed(2)}% of
+                      department budget
+                    </aside>
+                    <aside>
+                      {((name.value / Budget.budget.totalSpend) * 100).toFixed(
+                        2
+                      )}
+                      % of total budget
+                    </aside>
                   </div>
                 ))}
               </div>
