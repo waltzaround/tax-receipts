@@ -104,6 +104,16 @@ header {
   margin-bottom: 2.5rem;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .hero-subtitle {
   margin-top: 1rem;
 }
@@ -151,9 +161,8 @@ header {
   font-family: inherit;
   border-radius: 6px;
   border: 1px solid #9e9e9e;
-
   line-height: 1;
-
+  text-align: end;
 }
 
 .summary {
@@ -197,6 +206,7 @@ header {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1.5rem;
+  justify-content: space-between;
 }
 
 .tax-result h2 {
@@ -295,7 +305,6 @@ footer {
   .calculator-input, .calculator-flex label {
     width: -webkit-fill-available;
     position: relative;
-
   }
 
   .calculator-input {
