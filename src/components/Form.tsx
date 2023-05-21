@@ -1,7 +1,12 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
+import { Dropdown } from "./index";
 import { Content } from "../data";
-import type { CalculateTotalsProps, CalculateTotalsReturn, InputChangeEvent } from "../types";
 import type { FormEvent } from "react";
+import type {
+  CalculateTotalsProps,
+  CalculateTotalsReturn,
+  InputChangeEvent
+} from "../types";
 
 type FormProps = {
   onSubmit: (result: CalculateTotalsProps) => void;
@@ -9,7 +14,8 @@ type FormProps = {
   totals: CalculateTotalsReturn;
 };
 
-const Form = ({onSubmit, isSent, totals}: FormProps) => {
+const Form = ({ onSubmit, isSent, totals }: FormProps) => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [incomeInput, setIncomeInput] = useState<string>("");
   const [gstInput, setGstInput] = useState<string>("");
   const [otherTaxInput, setOtherTaxInput] = useState<string>("");
@@ -29,27 +35,47 @@ const Form = ({onSubmit, isSent, totals}: FormProps) => {
     setOtherTaxInput(value);
   }, []);
 
-  const handleOnSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const income = incomeInput ? Number(incomeInput?.replace(/[^0-9\.]/g, "")) : 0;
-    const gst = gstInput ? Number(gstInput?.replace(/[^0-9\.]/g, "")) : 0;
-    const otherTax = otherTaxInput ? Number(otherTaxInput?.replace(/[^0-9\.]/g, "")) : 0;
-    if (income > 0) {
-      onSubmit({
-        income,
-        gst,
-        otherTax
-      });
-    }
-  }, [incomeInput, gstInput, otherTaxInput]);
+  const handleOnDropdownChange = useCallback(
+    incomeSelected => {
+      if (incomeSelected) {
+        setIncomeInput(incomeSelected.toString());
+        setGstInput("");
+        setOtherTaxInput("");
+        onSubmit({
+          income: incomeSelected,
+          gst: 0,
+          otherTax: 0
+        });
+      }
+    },
+    []
+  );
+
+  const handleOnSubmit = useCallback(
+    (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      const income = incomeInput
+        ? Number(incomeInput?.replace(/[^0-9\.]/g, ""))
+        : 0;
+      const gst = gstInput ? Number(gstInput?.replace(/[^0-9\.]/g, "")) : 0;
+      const otherTax = otherTaxInput
+        ? Number(otherTaxInput?.replace(/[^0-9\.]/g, ""))
+        : 0;
+      if (income > 0) {
+        onSubmit({
+          income,
+          gst,
+          otherTax
+        });
+      }
+    },
+    [incomeInput, gstInput, otherTaxInput]
+  );
 
   return (
     <>
       <main role="main" className="calculator" id="calculator-inputs">
-        <form
-          onSubmit={handleOnSubmit}
-          method="dialog"
-        >
+        <form method="dialog" onSubmit={handleOnSubmit} ref={formRef}>
           <div className="calculator-flex">
             <label>
               {Content.incomeInputLabel}
@@ -59,7 +85,6 @@ const Form = ({onSubmit, isSent, totals}: FormProps) => {
                 id="input-income"
                 inputMode="decimal"
                 onChange={handleIncomeChange}
-                pattern="\d{1,}[\,\.]{1}\d{1,2}"
                 placeholder="0.00"
                 type="text"
                 value={incomeInput}
@@ -73,7 +98,6 @@ const Form = ({onSubmit, isSent, totals}: FormProps) => {
                 id="input-spending"
                 inputMode="decimal"
                 onChange={handleGSTChange}
-                pattern="\d{1,}[\,\.]{1}\d{1,2}"
                 placeholder="0.00"
                 type="text"
                 value={gstInput}
@@ -87,25 +111,39 @@ const Form = ({onSubmit, isSent, totals}: FormProps) => {
                 id="input-other"
                 inputMode="decimal"
                 onChange={handleOtherTaxChange}
-                pattern="\d{1,}[\,\.]{1}\d{1,2}"
                 placeholder="0.00"
                 type="text"
                 value={otherTaxInput}
               />
             </label>
           </div>
-          <button type="submit">{Content.formSubmit}</button>
+          <div className="two-columns-flex" style={{alignItems: "center"}}>
+            <button className="cta" type="submit">
+              {Content.formSubmit}
+            </button>
+            or
+            <Dropdown onChange={handleOnDropdownChange} />
+          </div>
         </form>
         {isSent && (
           <section className="contribution">
-            <p>{Content.totalsIncome}{totals.taxFromIncome}</p>
-            <p>{Content.totalsGst}{totals.taxFromGST}</p>
-            <p>{Content.totalsOtherTax}{totals.taxFromGST}</p>
+            <p>
+              {Content.totalsIncome}
+              {totals.taxFromIncome}
+            </p>
+            <p>
+              {Content.totalsGst}
+              {totals.taxFromGST}
+            </p>
+            <p>
+              {Content.totalsOtherTax}
+              {totals.taxFromGST}
+            </p>
           </section>
         )}
       </main>
     </>
   );
-}
+};
 
 export { Form };

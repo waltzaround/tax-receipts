@@ -62,7 +62,7 @@ aside {
   color: #666;
 }
 
-button {
+button.cta {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 1rem 2.5rem;
@@ -74,14 +74,15 @@ button {
   transition: border-color 0.25s;
   width: 100%;
   max-width: 320px;
+  text-align: center;
 }
 
-button:hover {
+button.cta:hover {
   border-color: #646cff;
 }
 
-button:focus,
-button:focus-visible {
+button.cta:focus,
+button.cta:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
@@ -95,7 +96,7 @@ button:focus-visible {
     color: #747bff;
   }
 
-  button {
+  button.cta {
     background-color: #f9f9f9;
   }
 }

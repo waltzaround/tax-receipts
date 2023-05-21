@@ -27,7 +27,9 @@ enum Content {
   howToGist = "How to calculate total tax",
   howToGistHref = "https://gist.github.com/waltzaround/39a6c803e68890c392855fe3e6d450d1",
   discord = "Discord",
-  discordHref = "https://discord.gg/qNEBWZgBwY"
+  discordHref = "https://discord.gg/qNEBWZgBwY",
+  taxBands = "Tax Bands",
+  selectIncome = "Select Income",
 };
 
 export { Content };
