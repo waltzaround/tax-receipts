@@ -13,7 +13,7 @@ enum Content {
   totalsOtherTax = "Other Tax Contributions: ",
   summaryStart = "Based on an income of ",
   summaryStartMedian = "Based on a median income of ",
-  summaryMiddle = ", and a total tax bill of ",
+  summaryMiddle = ", and a tax contribution of ",
   summaryEnd = ", this is where your money was spent in ",
   ofTotalSpend = " of total spend",
   ofDepartmentSpend = " of department spend",
