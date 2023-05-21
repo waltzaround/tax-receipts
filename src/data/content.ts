@@ -21,7 +21,13 @@ enum Content {
   madeByAuthor = "Walter Lim",
   madeByAuthorHref = "https://walt.online",
   madeByRepoHref = "https://github.com/waltzaround/tax-receipts",
-  madeByRepoText = "Source code available here"
+  madeByRepoText = "Source code",
+  methodology = "Methodology",
+  methodologyHref = "https://gist.github.com/waltzaround/5c469a4fe012a3b884af4826410cd5fa",
+  howToGist = "How to calculate total tax",
+  howToGistHref = "https://gist.github.com/waltzaround/39a6c803e68890c392855fe3e6d450d1",
+  discord = "Discord",
+  discordHref = "https://discord.gg/qNEBWZgBwY"
 };
 
 export { Content };
