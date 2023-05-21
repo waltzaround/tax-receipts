@@ -1,11 +1,12 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
+import { Dropdown } from "./index";
 import { Content } from "../data";
+import type { FormEvent } from "react";
 import type {
   CalculateTotalsProps,
   CalculateTotalsReturn,
-  InputChangeEvent,
+  InputChangeEvent
 } from "../types";
-import type { FormEvent } from "react";
 
 type FormProps = {
   onSubmit: (result: CalculateTotalsProps) => void;
@@ -14,6 +15,7 @@ type FormProps = {
 };
 
 const Form = ({ onSubmit, isSent, totals }: FormProps) => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [incomeInput, setIncomeInput] = useState<string>("");
   const [gstInput, setGstInput] = useState<string>("");
   const [otherTaxInput, setOtherTaxInput] = useState<string>("");
@@ -33,6 +35,22 @@ const Form = ({ onSubmit, isSent, totals }: FormProps) => {
     setOtherTaxInput(value);
   }, []);
 
+  const handleOnDropdownChange = useCallback(
+    incomeSelected => {
+      if (incomeSelected) {
+        setIncomeInput(incomeSelected.toString());
+        setGstInput("");
+        setOtherTaxInput("");
+        onSubmit({
+          income: incomeSelected,
+          gst: 0,
+          otherTax: 0
+        });
+      }
+    },
+    []
+  );
+
   const handleOnSubmit = useCallback(
     (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
@@ -47,7 +65,7 @@ const Form = ({ onSubmit, isSent, totals }: FormProps) => {
         onSubmit({
           income,
           gst,
-          otherTax,
+          otherTax
         });
       }
     },
@@ -57,7 +75,7 @@ const Form = ({ onSubmit, isSent, totals }: FormProps) => {
   return (
     <>
       <main role="main" className="calculator" id="calculator-inputs">
-        <form onSubmit={handleOnSubmit} method="dialog">
+        <form method="dialog" onSubmit={handleOnSubmit} ref={formRef}>
           <div className="calculator-flex">
             <label>
               {Content.incomeInputLabel}
@@ -67,7 +85,6 @@ const Form = ({ onSubmit, isSent, totals }: FormProps) => {
                 id="input-income"
                 inputMode="decimal"
                 onChange={handleIncomeChange}
-                pattern="\d{1,}[\,\.]{1}\d{1,2}"
                 placeholder="0.00"
                 type="text"
                 value={incomeInput}
@@ -81,7 +98,6 @@ const Form = ({ onSubmit, isSent, totals }: FormProps) => {
                 id="input-spending"
                 inputMode="decimal"
                 onChange={handleGSTChange}
-                pattern="\d{1,}[\,\.]{1}\d{1,2}"
                 placeholder="0.00"
                 type="text"
                 value={gstInput}
@@ -95,14 +111,19 @@ const Form = ({ onSubmit, isSent, totals }: FormProps) => {
                 id="input-other"
                 inputMode="decimal"
                 onChange={handleOtherTaxChange}
-                pattern="\d{1,}[\,\.]{1}\d{1,2}"
                 placeholder="0.00"
                 type="text"
                 value={otherTaxInput}
               />
             </label>
           </div>
-          <button type="submit">{Content.formSubmit}</button>
+          <div className="two-columns-flex" style={{alignItems: "center"}}>
+            <button className="cta" type="submit">
+              {Content.formSubmit}
+            </button>
+            or
+            <Dropdown onChange={handleOnDropdownChange} />
+          </div>
         </form>
         {isSent && (
           <section className="contribution">

@@ -12,7 +12,7 @@ const App = () => {
 
   const lastYear = useMemo(() => new Date().getFullYear() - 1, []);
 
-  const handleOnSubmit = useCallback((result) => {
+  const handleOnSubmit = useCallback(result => {
     const newTotals = calculateTotals(result);
     setTotals(newTotals);
     setIsSent(true);
@@ -30,18 +30,11 @@ const App = () => {
   return (
     <>
       <Header lastYear={lastYear} />
-      <Form
-        isSent={isSent}
-        onSubmit={handleOnSubmit}
-        totals={totals}
-      /><Result
-        isSent={isSent}
-        lastYear={lastYear}
-        totals={totals}
-      />
+      <Form isSent={isSent} onSubmit={handleOnSubmit} totals={totals} />
+      <Result isSent={isSent} lastYear={lastYear} totals={totals} />
       <Footer />
     </>
   );
-}
+};
 
 export default App;

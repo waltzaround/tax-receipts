@@ -5,19 +5,19 @@ export type InputChangeEvent = ChangeEvent<HTMLInputElement>;
 export type TaxBand = {
   id: string;
   end: number;
-  rate: number
+  rate: number;
 };
 
 export type BandAmount = {
   id: string;
-  amount: number
+  amount: number;
 };
 
 export type BudgetPaid = {
   amount: string;
   percentage: string;
   percentageOfParent: string;
-}
+};
 
 export type BudgetChild = {
   name: string;
