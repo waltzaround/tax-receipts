@@ -137,7 +137,7 @@ const Form = ({ onSubmit, isSent, totals }: FormProps) => {
             </p>
             <p>
               {Content.totalsOtherTax}
-              {totals.taxFromGST}
+              {totals.taxFromOther}
             </p>
           </section>
         )}
