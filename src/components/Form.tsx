@@ -1,6 +1,10 @@
 import { useState, useCallback } from "react";
 import { Content } from "../data";
-import type { CalculateTotalsProps, CalculateTotalsReturn, InputChangeEvent } from "../types";
+import type {
+  CalculateTotalsProps,
+  CalculateTotalsReturn,
+  InputChangeEvent,
+} from "../types";
 import type { FormEvent } from "react";
 
 type FormProps = {
@@ -9,7 +13,7 @@ type FormProps = {
   totals: CalculateTotalsReturn;
 };
 
-const Form = ({onSubmit, isSent, totals}: FormProps) => {
+const Form = ({ onSubmit, isSent, totals }: FormProps) => {
   const [incomeInput, setIncomeInput] = useState<string>("");
   const [gstInput, setGstInput] = useState<string>("");
   const [otherTaxInput, setOtherTaxInput] = useState<string>("");
@@ -29,27 +33,31 @@ const Form = ({onSubmit, isSent, totals}: FormProps) => {
     setOtherTaxInput(value);
   }, []);
 
-  const handleOnSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const income = incomeInput ? Number(incomeInput?.replace(/[^0-9\.]/g, "")) : 0;
-    const gst = gstInput ? Number(gstInput?.replace(/[^0-9\.]/g, "")) : 0;
-    const otherTax = otherTaxInput ? Number(otherTaxInput?.replace(/[^0-9\.]/g, "")) : 0;
-    if (income > 0) {
-      onSubmit({
-        income,
-        gst,
-        otherTax
-      });
-    }
-  }, [incomeInput, gstInput, otherTaxInput]);
+  const handleOnSubmit = useCallback(
+    (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      const income = incomeInput
+        ? Number(incomeInput?.replace(/[^0-9\.]/g, ""))
+        : 0;
+      const gst = gstInput ? Number(gstInput?.replace(/[^0-9\.]/g, "")) : 0;
+      const otherTax = otherTaxInput
+        ? Number(otherTaxInput?.replace(/[^0-9\.]/g, ""))
+        : 0;
+      if (income > 0) {
+        onSubmit({
+          income,
+          gst,
+          otherTax,
+        });
+      }
+    },
+    [incomeInput, gstInput, otherTaxInput]
+  );
 
   return (
     <>
       <main role="main" className="calculator" id="calculator-inputs">
-        <form
-          onSubmit={handleOnSubmit}
-          method="dialog"
-        >
+        <form onSubmit={handleOnSubmit} method="dialog">
           <div className="calculator-flex">
             <label>
               {Content.incomeInputLabel}
@@ -98,14 +106,23 @@ const Form = ({onSubmit, isSent, totals}: FormProps) => {
         </form>
         {isSent && (
           <section className="contribution">
-            <p>{Content.totalsIncome}{totals.taxFromIncome}</p>
-            <p>{Content.totalsGst}{totals.taxFromGST}</p>
-            <p>{Content.totalsOtherTax}{totals.taxFromGST}</p>
+            <p>
+              {Content.totalsIncome}
+              {totals.taxFromIncome}
+            </p>
+            <p>
+              {Content.totalsGst}
+              {totals.taxFromGST}
+            </p>
+            <p>
+              {Content.totalsOtherTax}
+              {totals.taxFromOther}
+            </p>
           </section>
         )}
       </main>
     </>
   );
-}
+};
 
 export { Form };
