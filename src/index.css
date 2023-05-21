@@ -171,8 +171,8 @@ input[type=number] {
   gap: 1px;
   border-radius: 6px;
   overflow: hidden;
-  border: 1px solid #000000;
-  background-color: black;
+  border: 1px solid #b5b5dd;
+  background-color: #b5b5dd;
   margin-top: 2.5rem;
 }
 
@@ -180,22 +180,22 @@ input[type=number] {
   flex: 1;
   background: white;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .summary-header {
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   font-weight: 700;
-  margin-bottom: 0.25rem;
   text-decoration: underline;
-
+  padding-right: 1rem;
 }
 
-.summary-header .summary-value {
-  font-size: 1.25rem;
+.summary-value {
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
   text-decoration: none;
-  ;
 }
 
 .contribution {
@@ -214,8 +214,8 @@ input[type=number] {
 }
 
 .result {
-  border: 1px solid #000000;
-  background-color: black;
+  border: 1px solid #b5b5dd;
+  background-color: #b5b5dd;
   margin-top: 2.5rem;
   border-radius: 8px;
   overflow: hidden;
@@ -247,18 +247,21 @@ input[type=number] {
   background-color: white;
   padding: 1rem;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .result-header-secondary {
   font-size: 1.2rem;
   margin-bottom: 0.25rem;
   font-weight: 500;
+  color: #666;
 }
 
 .result-value-secondary {
   font-size: 1.5rem;
-
-  font-weight: 600;
+  font-weight: 700;
 }
 
 footer {
@@ -314,4 +317,33 @@ footer {
   .calculator-flex label i {
     display: none
   }
+}
+
+.bar-container {
+  position: relative;
+  width: 100%;
+  background-color: #e1e1ec88;
+  border-radius: 8px;
+  height: 10px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.percentage-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 10px;
+  background-color: #4a4a9c88;
+  width: 0%;
+  border-radius: 8px;
+}
+
+.two-columns-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 8px;
 }

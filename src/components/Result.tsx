@@ -1,5 +1,6 @@
 import { Content, Incomes2022 } from "../data";
 import { formatCurrency } from "../utils";
+import { Bar } from "./index";
 
 const Result = ({
   isSent,
@@ -26,19 +27,22 @@ const Result = ({
       }
     }) => (
       <div className="summary-primary" key={`/#${id}`}>
-        <a className="summary-header" href={`/#${id}`}>
-          {name}
-        </a>
-        <p className="summary-value">
-          {amount}
-        </p>
-        <aside>
-          {percentage}{Content.ofTotalSpend}
-        </aside>
+        <div className="two-columns-flex">
+          <a className="summary-header" href={`/#${id}`}>
+            {name}
+          </a>
+          <p className="summary-value">
+            {amount}
+          </p>
+        </div>
+        <div>
+          <aside>
+            {percentage}{Content.ofTotalSpend}
+          </aside>
+          <Bar width={percentage} />
+        </div>
       </div>
-    ))}{" "}
-    <div className="summary-primary last-2"></div>
-    <div className="summary-primary last"></div>
+    ))}
   </section>
   {totals.totalsPerCategory.map(({
     id,
@@ -58,20 +62,28 @@ const Result = ({
         <aside>
           {percentage}{Content.ofTotalSpend}
         </aside>
+        <Bar width={percentage} />
       </div>
       <div className="result-secondary">
         {children.map((child) => (
           <div key={child.name} className="result-secondary-item">
-            <h3 className="result-header-secondary">{child.name}</h3>
-            <p className="result-value-secondary">
-              {child.paid.amount}
-            </p>
-            <aside>
-              {child.paid.percentageOfParent}{Content.ofDepartmentSpend}
-            </aside>
-            <aside>
-              {child.paid.percentage}{Content.ofTotalSpend}
-            </aside>
+            <div className="two-columns-flex">
+              <h3 className="result-header-secondary">{child.name}</h3>
+              <p className="result-value-secondary">
+                {child.paid.amount}
+              </p>
+            </div>
+            <div>
+              <div>
+                <aside>
+                  {child.paid.percentageOfParent}{Content.ofDepartmentSpend}
+                </aside>
+                <aside>
+                  {child.paid.percentage}{Content.ofTotalSpend}
+                </aside>
+              </div>
+              <Bar width={child.paid.percentageOfParent} secondaryWidth={child.paid.percentage} />
+            </div>
           </div>
         ))}
       </div>
