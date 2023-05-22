@@ -211,6 +211,7 @@ input[type=number] {
 
 .tax-result h2 {
   font-size: 1.75rem;
+  font-weight: 300;
 }
 
 .result {
