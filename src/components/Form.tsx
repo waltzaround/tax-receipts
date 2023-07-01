@@ -67,7 +67,7 @@ const Form = ({ onSubmit, isSent, totals }: FormProps) => {
                 id="input-income"
                 inputMode="decimal"
                 onChange={handleIncomeChange}
-                pattern="([0-9]|[1-9][0-9]{1,5}|[1-8][0-9]{6}|9000000)"
+                pattern="NaN|-?((\d*\.\d+|\d+)([Ee][+-]?\d+)?|Infinity)"
                 placeholder="0.00"
                 type="text"
                 value={incomeInput}
@@ -81,7 +81,7 @@ const Form = ({ onSubmit, isSent, totals }: FormProps) => {
                 id="input-spending"
                 inputMode="decimal"
                 onChange={handleGSTChange}
-                pattern="([0-9]|[1-9][0-9]{1,5}|[1-8][0-9]{6}|9000000)"
+                pattern="NaN|-?((\d*\.\d+|\d+)([Ee][+-]?\d+)?|Infinity)"
                 placeholder="0.00"
                 type="text"
                 value={gstInput}
@@ -95,7 +95,7 @@ const Form = ({ onSubmit, isSent, totals }: FormProps) => {
                 id="input-other"
                 inputMode="decimal"
                 onChange={handleOtherTaxChange}
-                pattern="([0-9]|[1-9][0-9]{1,5}|[1-8][0-9]{6}|9000000)"
+                pattern="NaN|-?((\d*\.\d+|\d+)([Ee][+-]?\d+)?|Infinity)"
                 placeholder="0.00"
                 type="text"
                 value={otherTaxInput}
