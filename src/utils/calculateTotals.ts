@@ -1,6 +1,14 @@
-import { calculateAmountPerTaxBand, formatCurrency, calculatePaid } from "./index";
+import {
+  calculateAmountPerTaxBand,
+  formatCurrency,
+  calculatePaid,
+} from "./index";
 import { budget2022 } from "../data";
-import type { BandAmount, CalculateTotalsProps, CalculateTotalsReturn } from "../types";
+import type {
+  BandAmount,
+  CalculateTotalsProps,
+  CalculateTotalsReturn,
+} from "../types";
 
 const sumAmount = (sum: BandAmount[]): number => {
   let total = 0;
@@ -23,12 +31,12 @@ const sumAmount = (sum: BandAmount[]): number => {
 const calculateTotals = ({
   income = 0,
   gst = 0,
-  otherTax = 0
+  otherTax = 0,
 }: CalculateTotalsProps): CalculateTotalsReturn => {
   const sum = calculateAmountPerTaxBand(income);
   const taxFromIncome = sumAmount(sum);
   const taxFromGST = gst * 0.15;
-  const lastYear = new Date().getFullYear() - 1;
+  const lastYear = new Date().getFullYear() - 2;
   const selectedBudget = lastYear === 2022 ? budget2022 : null;
   const totalTax = taxFromIncome + otherTax + gst * 0.15;
 
@@ -37,7 +45,7 @@ const calculateTotals = ({
       value: category.value,
       totalTax,
       totalSpend: selectedBudget.totalSpend,
-      parentSpend: selectedBudget.totalSpend
+      parentSpend: selectedBudget.totalSpend,
     });
 
     category.children = category.children.map((child) => {
@@ -45,13 +53,13 @@ const calculateTotals = ({
         value: child.value,
         totalTax,
         totalSpend: selectedBudget.totalSpend,
-        parentSpend: category.value
+        parentSpend: category.value,
       });
       return child;
     });
 
     return category;
-  })
+  });
 
   return {
     income: formatCurrency(income),
@@ -59,8 +67,8 @@ const calculateTotals = ({
     taxFromGST: formatCurrency(taxFromGST),
     taxFromOther: formatCurrency(otherTax),
     totalTax: formatCurrency(totalTax),
-    totalsPerCategory
+    totalsPerCategory,
   };
-}
+};
 
 export { calculateTotals };
