@@ -40,12 +40,14 @@ const calculateTotals = ({
   
   // Use the appropriate budget based on the year, with fallback to the latest available
   let selectedBudget;
-  if (lastYear === 2024) {
+  if (lastYear >= 2024) {
+    // Use 2024 budget for 2024 and later years
     selectedBudget = budget2024;
-  } else if (lastYear === 2022) {
+  } else if (lastYear >= 2022) {
+    // Use 2022 budget for 2022 and 2023
     selectedBudget = budget2022;
   } else {
-    // Use the latest available budget data if the specific year is not available
+    // For years before 2022, use the latest available budget data
     selectedBudget = budget2024;
   }
   
