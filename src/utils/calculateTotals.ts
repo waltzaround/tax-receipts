@@ -3,7 +3,7 @@ import {
   formatCurrency,
   calculatePaid,
 } from "./index";
-import { budget2022 } from "../data";
+import { budget2022, budget2024 } from "../data";
 import type {
   BandAmount,
   CalculateTotalsProps,
@@ -37,7 +37,18 @@ const calculateTotals = ({
   const taxFromIncome = sumAmount(sum);
   const taxFromGST = gst * 0.15;
   const lastYear = new Date().getFullYear() - 2;
-  const selectedBudget = lastYear === 2022 ? budget2022 : null;
+  
+  // Use the appropriate budget based on the year, with fallback to the latest available
+  let selectedBudget;
+  if (lastYear === 2024) {
+    selectedBudget = budget2024;
+  } else if (lastYear === 2022) {
+    selectedBudget = budget2022;
+  } else {
+    // Use the latest available budget data if the specific year is not available
+    selectedBudget = budget2024;
+  }
+  
   const totalTax = taxFromIncome + otherTax + gst * 0.15;
 
   const totalsPerCategory = selectedBudget.category.map((category) => {
