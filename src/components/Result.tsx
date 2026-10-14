@@ -1,30 +1,26 @@
-import { Content, Incomes2022 } from "../data";
-import { formatCurrency } from "../utils";
+import { Content } from "../data";
+import { calculatorPeriod } from "../data/calculator";
 import { Bar } from "./index";
 
-const Result = ({ isSent, lastYear, totals }) => (
+const Result = ({ totals }) => (
   <div>
     <section className="tax-result" id="calculator-results">
       <h2>
-        {/* {isSent ? Content.summaryStart : Content.summaryStartMedian} */}
         {Content.summaryStart}
-        {/* <strong>
-          {isSent ? totals.income : formatCurrency(Incomes2022.median)}
-        </strong> */}
         {Content.summaryMiddle}
         <strong>{totals.totalTax}</strong>
         {Content.summaryEnd}
-        {lastYear}:
+        the {calculatorPeriod}:
       </h2>
     </section>
     <section className="summary" id="summary">
       {totals.totalsPerCategory.map(
-        ({ id, name, paid: { amount, percentage } }) => (
+        ({ id, name, paid: { amount, percentage }, children }) => (
           <div className="summary-primary" key={`/#${id}`}>
             <div className="two-columns-flex">
-              <a className="summary-header" href={`/#${id}`}>
-                {name}
-              </a>
+              {children.length > 0 ? (
+                <a className="summary-header" href={`/#${id}`}>{name}</a>
+              ) : <span className="summary-header">{name}</span>}
               <p className="summary-value">{amount}</p>
             </div>
             <div>
@@ -38,7 +34,7 @@ const Result = ({ isSent, lastYear, totals }) => (
         )
       )}
     </section>
-    {totals.totalsPerCategory.map(
+    {totals.totalsPerCategory.filter(category => category.children.length > 0).map(
       ({ id, name, paid: { amount, percentage }, children }) => (
         <section className="result" key={id} id={id}>
           <div className="result-primary">

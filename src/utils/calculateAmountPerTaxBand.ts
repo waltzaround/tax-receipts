@@ -1,4 +1,4 @@
-import { taxBands2022 } from "../data";
+import { incomeTaxBands } from "../data/calculator";
 import type { BandAmount } from "../types";
 
 /**
@@ -12,9 +12,9 @@ import type { BandAmount } from "../types";
 const calculateAmountPerTaxBand = (income: number): BandAmount[] => {
   const amounts: BandAmount[] = [];
 
-  for (let i = 0; i < taxBands2022.length; i++) {
-    const currentTaxBand = taxBands2022[i];
-    const prevTaxBand = taxBands2022[i - 1];
+  for (let i = 0; i < incomeTaxBands.length; i++) {
+    const currentTaxBand = incomeTaxBands[i];
+    const prevTaxBand = incomeTaxBands[i - 1];
     let taxAmount = 0;
 
     if (income < currentTaxBand.end) {

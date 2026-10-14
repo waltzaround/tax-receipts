@@ -3,7 +3,7 @@ import {
   formatCurrency,
   calculatePaid,
 } from "./index";
-import { budget2022, budget2024 } from "../data";
+import { calculatorBudget } from "../data/calculator";
 import type {
   BandAmount,
   CalculateTotalsProps,
@@ -35,43 +35,30 @@ const calculateTotals = ({
 }: CalculateTotalsProps): CalculateTotalsReturn => {
   const sum = calculateAmountPerTaxBand(income);
   const taxFromIncome = sumAmount(sum);
-  const taxFromGST = gst * 0.15;
-  const lastYear = new Date().getFullYear() - 2;
-  
-  // Use the appropriate budget based on the year, with fallback to the latest available
-  let selectedBudget;
-  if (lastYear >= 2024) {
-    // Use 2024 budget for 2024 and later years
-    selectedBudget = budget2024;
-  } else if (lastYear >= 2022) {
-    // Use 2022 budget for 2022 and 2023
-    selectedBudget = budget2022;
-  } else {
-    // For years before 2022, use the latest available budget data
-    selectedBudget = budget2024;
-  }
-  
-  const totalTax = taxFromIncome + otherTax + gst * 0.15;
+  // Spending is the price paid including GST: IRD's tax fraction is 3/23.
+  const taxFromGST = gst * 3 / 23;
+  const selectedBudget = calculatorBudget;
+  const totalTax = taxFromIncome + otherTax + taxFromGST;
 
   const totalsPerCategory = selectedBudget.category.map((category) => {
-    category.paid = calculatePaid({
+    const paid = calculatePaid({
       value: category.value,
       totalTax,
       totalSpend: selectedBudget.totalSpend,
       parentSpend: selectedBudget.totalSpend,
     });
 
-    category.children = category.children.map((child) => {
-      child.paid = calculatePaid({
+    const children = category.children.map((child) => ({
+      ...child,
+      paid: calculatePaid({
         value: child.value,
         totalTax,
         totalSpend: selectedBudget.totalSpend,
         parentSpend: category.value,
-      });
-      return child;
-    });
+      }),
+    }));
 
-    return category;
+    return { ...category, paid, children };
   });
 
   return {

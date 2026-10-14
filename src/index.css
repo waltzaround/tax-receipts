@@ -119,6 +119,13 @@ input[type=number] {
   margin-top: 1rem;
 }
 
+.calculator-note {
+  margin: 1rem 0;
+  font-size: .8rem;
+  line-height: 1.7;
+  color: #55556c;
+}
+
 .calculator {
   padding: 1.5rem;
   background: #FFFFFF;

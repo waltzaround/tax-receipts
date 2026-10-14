@@ -102,6 +102,7 @@ const Form = ({ onSubmit, isSent, totals }: FormProps) => {
               />
             </label>
           </div>
+          <p className="calculator-note">For spending, include purchases subject to 15% GST only; exclude rent and other GST-exempt spending.</p>
           <button type="submit">{Content.formSubmit}</button>
         </form>
         {isSent && (

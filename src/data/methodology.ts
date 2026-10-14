@@ -1,0 +1,7 @@
+export const methodologyChanges = [
+  { year: 1987, label: "GST added", explanation: "From 1987 to 1993, the spending figures include GST. Think of comparing a shop price with tax included to one without it: part of the difference is how the number is shown." },
+  { year: 1990, label: "New year-end", explanation: "The government’s money year used to finish in March. From 1990 it finishes in June. The figures cover a different set of months, so the switch can affect comparisons." },
+  { year: 1994, label: "Costs counted differently", explanation: "Before 1994, the total mostly counted money paid out. From 1994, it counts costs when they happen, including things wearing out, even if no cash changes hands then. GST is also no longer included. A jump here does not necessarily mean more services." },
+  { year: 1997, label: "Updated accounting", explanation: "These figures use international accounting rules (IFRS). The 1994–1996 figures still use older rules. Treasury has not rewritten every older number using the newer rules, so the two sides are not a perfect match." },
+  { year: 2005, label: "Public-sector rules", explanation: "From here, Treasury’s historical series uses accounting rules designed for public services (PBE). A change in the rulebook can change a reported number without changing what people receive. This marks the basis of this dataset, not the date the rules were introduced." },
+];

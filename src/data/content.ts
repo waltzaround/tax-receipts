@@ -1,11 +1,11 @@
 enum Content {
-  header = "TaxReceipt.co.nz",
+  header = "tax.walt.online",
   hero = "Where did your tax go?",
   subHero = "based on",
   subHeroLink = "Actual Core Crown Expenses",
   subHeroHref = "https://www.treasury.govt.nz/publications/efu/budget-economic-and-fiscal-update-2024",
   incomeInputLabel = "Your Annual Income (Before Tax)",
-  gstInputLabel = "Your Annual Spending (Optional)",
+  gstInputLabel = "Annual GST-Inclusive Spending (Optional)",
   otherTaxInputLabel = "Any Other Tax Payments (Optional)",
   formSubmit = "Calculate",
   totalsIncome = "Income Tax Contribution: ",
